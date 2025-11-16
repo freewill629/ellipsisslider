@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hour of AI: Interactive Banner</title>
+    <!-- 
+      TECHNICAL GUIDE (UPDATED): 
+      This file contains the complete interactive banner.
+      1. Load Tailwind CSS (included below).
+      2. Add this HTML structure to your homepage's banner section.
+      3. Replace the placeholder image URLs (from placehold.co) with your actual image assets.
+         I've marked them with comments like [TECH TEAM: REPLACE WITH YOUR IMAGE].
+         Make sure the image paths are correct for your website's setup.
+    --><script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom font - Inter */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Custom Animations for text and elements */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulse-strong {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7); }
+            50% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(59, 130, 246, 0); }
+        }
+        @keyframes shimmer {
+            0% { background-position: -1000px 0; }
+            100% { background-position: 1000px 0; }
+        }
+        
+        /* Neuron Signal Animation for image overlay */
+        .neuron-signal-line {
+            position: absolute;
+            background-color: transparent; /* Lines are part of the image, we just animate the "signal" */
+            overflow: hidden; /* Hide signal outside the line bounds */
+            z-index: 20; /* Above the image */
+        }
+        .neuron-signal-effect {
+            position: absolute;
+            width: 15px; /* Width of the moving "signal" */
+            height: 100%;
+            background: linear-gradient(to right, transparent, rgba(59, 130, 246, 0.8), transparent); /* Blue glow */
+            animation: moveSignalEffect 2.5s linear infinite;
+        }
+
+        /* Specific positions and delays for each signal line on the image */
+        .signal-1 { top: 38%; left: 14%; width: 15%; height: 2px; transform: rotate(-5deg); animation-delay: 0s; }
+        .signal-2 { top: 51%; left: 15%; width: 14%; height: 2px; animation-delay: 0.5s; }
+        .signal-3 { top: 62%; left: 14%; width: 15%; height: 2px; transform: rotate(5deg); animation-delay: 1s; }
+        .signal-output { top: 51%; left: 63%; width: 14%; height: 2px; animation-delay: 1.5s; }
+
+
+        @keyframes moveSignalEffect {
+            0% { transform: translateX(-100%); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; transform: translateX(calc(100% - 15px)); } /* Move across the line width */
+            100% { transform: translateX(calc(100% - 15px)); opacity: 0; }
+        }
+
+        /* Slide transition styles */
+        .slide {
+            transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out;
+            opacity: 0;
+            transform: scale(0.98);
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .active-slide {
+            opacity: 1;
+            transform: scale(1);
+            z-index: 10;
+        }
+
+        /* Shimmer effect for the main title */
+        .shimmer-text {
+            background: linear-gradient(to right, #9333ea 20%, #ec4899 40%, #f59e0b 60%, #9333ea 80%);
+            background-size: 200% auto;
+            color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+            animation: shimmer 4s linear infinite;
+        }
+
+        /* Ken Burns effect for the background image */
+        .ken-burns {
+            animation: kenburns 20s ease-out infinite;
+            background-size: cover;
+            background-position: center;
+        }
+        @keyframes kenburns {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- 
+      MAIN BANNER CONTAINER
+      This container holds all the slides. 
+      It's set to be responsive and maintain an aspect ratio.
+      On mobile (h-[700px]), it's taller. On desktop (md:h-[550px]), it's wider.
+    --><div id="interactive-banner" class="relative w-full max-w-7xl mx-auto my-8 h-[700px] md:h-[550px] overflow-hidden rounded-2xl shadow-2xl bg-gray-900">
+
+        <!-- 
+          SLIDE 1: The Hook
+          "The Hour of AI is here"
+        --><div class="slide active-slide" data-slide="0">
+            <div class="absolute inset-0 overflow-hidden z-0">
+                <!-- 
+                  [TECH TEAM: REPLACE WITH YOUR IMAGE]
+                  Use 'Image 1: Hour of AI Activity Launch Graphic 2.jpg' here.
+                  Make sure the path to the image is correct.
+                --><img src="https://placehold.co/1200x600/1e1b4b/ffffff?text=Image+1" 
+                     alt="Kids climbing a mountain with city in background" 
+                     class="ken-burns w-full h-full object-cover">
+                <!-- Gradient overlay for text readability --><div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+            </div>
+            
+            <div class="relative w-full h-full flex flex-col justify-end p-8 md:p-12 text-white z-10">
+                <h1 class="text-5xl md:text-7xl font-black mb-4 leading-tight" style="animation: fadeInUp 1s ease-out;">
+                    The <span class="shimmer-text">Hour of AI</span> is here.
+                </h1>
+                <p class="text-xl md:text-2xl font-light max-w-2xl leading-relaxed" style="animation: fadeInUp 1.2s ease-out;">
+                    A global movement to make AI education accessible, engaging, and inspiring for every learner.
+                </p>
+                <a href="https://ellipsisedu.com/en/hourofai-artificialneuron" target="_blank"
+                   class="mt-6 w-fit bg-blue-600 text-white font-bold py-3 px-6 rounded-lg text-lg
+                          hover:bg-blue-700 transition-all transform hover:scale-105 inline-block"
+                   style="animation: fadeInUp 1.4s ease-out;">
+                   Explore the Activity
+                </a>
+            </div>
+        </div>
+
+        <!-- 
+          SLIDE 2: The "What" - Interactive Neuron
+          This slide features the "Artificial Neuron" concept with your provided image and an animated overlay.
+        --><div class="slide bg-gradient-to-br from-purple-900 via-indigo-900 to-gray-900" data-slide="1">
+            <div class="w-full h-full flex flex-col md:flex-row items-center justify-center p-8 md:p-12 text-white gap-8 md:gap-16">
+                <!-- Left Side: Text Description --><div class="w-full md:w-1/2 flex flex-col justify-center" style="animation: fadeInDown 1s ease-out;">
+                    <h2 class="text-4xl md:text-5xl font-black mb-4 leading-tight">Meet the Artificial Neuron</h2>
+                    <p class="text-lg md:text-xl font-light mb-4 leading-relaxed">
+                        This lesson introduces the building blocks of AI through a fun “beach decision” model.
+                    </p>
+                    <p class="text-lg md:text-xl font-light leading-relaxed">
+                        Students explore how inputs, weights, and bias shape decisions, then design their own neurons.
+                    </p>
+                </div>
+                
+                <!-- Right Side: Provided Image with Animated Overlay --><div class="w-full md:w-1/2 flex items-center justify-center relative min-h-[300px] md:min-h-full" style="animation: fadeInUp 1s ease-out;">
+                    <!-- 
+                      [TECH TEAM: REPLACE WITH YOUR IMAGE]
+                      Use 'Image 2: artificial neuron.jpg' here.
+                      Make sure the path to the image is correct.
+                    --><img src="https://placehold.co/600x400/3730a3/ffffff?text=Image+2" 
+                         alt="Artificial Neuron Diagram" 
+                         class="w-full h-auto object-contain rounded-lg shadow-lg z-10 max-w-md">
+
+                    <!-- Animated signal lines positioned over the image --><div class="absolute inset-0 z-20 flex justify-center items-center">
+                        <div class="relative w-[80%] h-[80%]"> <!-- Adjust this container to match image scale --><!-- Input 1 signal line --><div class="neuron-signal-line signal-1">
+                                <div class="neuron-signal-effect"></div>
+                            </div>
+                            <!-- Input 2 signal line --><div class="neuron-signal-line signal-2">
+                                <div class="neuron-signal-effect"></div>
+                            </div>
+                            <!-- Input 3 signal line --><div class="neuron-signal-line signal-3">
+                                <div class="neuron-signal-effect"></div>
+                            </div>
+                            <!-- Output signal line --><div class="neuron-signal-line signal-output">
+                                <div class="neuron-signal-effect"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 
+          SLIDE 3: The "How" - What Students Learn
+          This slide lists the learning outcomes and shows the "Design a neuron" UI image.
+        --><div class="slide bg-gradient-to-br from-indigo-900 to-purple-900" data-slide="2">
+            <div class="w-full h-full flex flex-col md:flex-row items-center justify-center p-8 md:p-12 text-white gap-8 md:gap-16">
+                <!-- Left side: Learning points --><div class="w-full md:w-1/2 flex flex-col justify-center" style="animation: fadeInDown 1s ease-out;">
+                    <h2 class="text-4xl md:text-5xl font-black mb-6 leading-tight">What Students Will Learn</h2>
+                    <ul class="space-y-3 text-lg md:text-xl leading-relaxed">
+                        <li class="flex items-start" style="animation: fadeInUp 1.2s ease-out;">
+                            <svg class="w-6 h-6 flex-shrink-0 mt-1 mr-3 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <span>Understand what an artificial neuron is and how it makes decisions.</span>
+                        </li>
+                        <li class="flex items-start" style="animation: fadeInUp 1.4s ease-out;">
+                            <svg class="w-6 h-6 flex-shrink-0 mt-1 mr-3 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <span>Explore how inputs, weights, and bias influence outcomes.</span>
+                        </li>
+                        <li class="flex items-start" style="animation: fadeInUp 1.6s ease-out;">
+                            <svg class="w-6 h-6 flex-shrink-0 mt-1 mr-3 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <span>Predict and test how changing weights affects a neuron's decision.</span>
+                        </li>
+                         <li class="flex items-start" style="animation: fadeInUp 1.8s ease-out;">
+                            <svg class="w-6 h-6 flex-shrink-0 mt-1 mr-3 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <span>Experiment in an online simulation to see AI decision-making in action.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Right side: Image 3 (Design a Neuron) --><div class="w-full md:w-1/2 flex items-center justify-center min-h-[300px] md:min-h-full" style="animation: fadeInUp 1s ease-out;">
+                    <!-- 
+                      [TECH TEAM: REPLACE WITH YOUR IMAGE]
+                      Use 'Image 3: design a neuron.jpg' here.
+                      Make sure the path to the image is correct.
+                    --><img src="https://placehold.co/600x400/4c1d95/ffffff?text=Image+3" 
+                         alt="Design a Neuron UI" 
+                         class="w-full h-auto object-contain rounded-lg shadow-lg max-w-md">
+                </div>
+            </div>
+        </div>
+
+        <!-- 
+          SLIDE 4: Call to Action (CTA)
+          Final slide to drive users to the activity.
+        --><div class="slide bg-gray-900" data-slide="3">
+            <div class="w-full h-full flex flex-col items-center justify-center p-8 md:p-12 text-white text-center">
+                 <h2 class="text-4xl md:text-6xl font-black mb-4 leading-tight" style="animation: fadeInUp 1s ease-out;">Start Your Hour of AI</h2>
+                 <p class="text-xl md:text-2xl font-light max-w-2xl mb-8 leading-relaxed" style="animation: fadeInUp 1.2s ease-out;">
+                    Bring the building blocks of artificial intelligence to your students with this free, one-hour activity.
+                 </p>
+                 <a href="https://ellipsisedu.com/en/hourofai-artificialneuron" target="_blank"
+                   class="bg-blue-600 text-white font-bold py-4 px-8 rounded-lg text-xl
+                          hover:bg-blue-700 transition-all transform hover:scale-105 inline-block"
+                   style="animation: pulse-strong 2s infinite;">
+                   Access the Activity Now
+                </a>
+                <p class="text-sm text-gray-400 mt-8 leading-relaxed" style="animation: fadeInUp 1.4s ease-out;">
+                    The Hour of AI is a global campaign from <span class="font-semibold">@CSforALL</span>, in collaboration with <span class="font-semibold">Code.org</span>.
+                </p>
+            </div>
+        </div>
+
+
+        <!-- 
+          NAVIGATION CONTROLS
+          Dots at the bottom to indicate slide position and allow navigation.
+        --><div class="absolute bottom-5 left-1/2 -translate-x-1/2 z-20 flex space-x-2">
+            <button class="nav-dot active-dot w-3 h-3 bg-white rounded-full opacity-50 transition-all" data-target="0"></button>
+            <button class="nav-dot w-3 h-3 bg-white rounded-full opacity-50 transition-all" data-target="1"></button>
+            <button class="nav-dot w-3 h-3 bg-white rounded-full opacity-50 transition-all" data-target="2"></button>
+            <button class="nav-dot w-3 h-3 bg-white rounded-full opacity-50 transition-all" data-target="3"></button>
+        </div>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.nav-dot');
+            let currentSlide = 0;
+            let slideInterval;
+
+            // This function now correctly updates the active slide and dots
+            // without re-cloning, which caused issues with event listeners and state.
+            function updateActiveSlide(index) {
+                slides.forEach((slide, i) => {
+                    if (i === index) {
+                        slide.classList.add('active-slide');
+                    } else {
+                        slide.classList.remove('active-slide');
+                    }
+                });
+                
+                dots.forEach((dot, i) => {
+                    if (i === index) {
+                        dot.classList.add('active-dot', 'opacity-100');
+                    } else {
+                        dot.classList.remove('active-dot', 'opacity-50'); // Ensure inactive dots are opaque
+                    }
+                });
+                
+                currentSlide = index;
+            }
+
+            function nextSlide() {
+                let newIndex = (currentSlide + 1) % slides.length;
+                updateActiveSlide(newIndex);
+            }
+
+            function startSlideShow() {
+                // Auto-advance every 7 seconds
+                slideInterval = setInterval(nextSlide, 7000);
+            }
+
+            function stopSlideShow() {
+                clearInterval(slideInterval);
+            }
+
+            // Navigation dot clicks
+            dots.forEach(dot => {
+                dot.addEventListener('click', () => {
+                    const targetIndex = parseInt(dot.dataset.target, 10);
+                    updateActiveSlide(targetIndex);
+                    // Stop and restart the slideshow timer
+                    stopSlideShow();
+                    startSlideShow();
+                });
+            });
+            
+            // Pause on hover
+            const banner = document.getElementById('interactive-banner');
+            banner.addEventListener('mouseenter', stopSlideShow);
+            banner.addEventListener('mouseleave', startSlideShow);
+
+            // Initialize the first slide and start the show
+            updateActiveSlide(0);
+            startSlideShow();
+        });
+    </script>
+
+</body>
+</html>
