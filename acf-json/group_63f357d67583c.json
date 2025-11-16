@@ -1,0 +1,433 @@
+{
+    "key": "group_63f357d67583c",
+    "title": "Hero With Testimonial",
+    "fields": [
+        {
+            "key": "field_63f357d67c654",
+            "label": "Block Name",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "<h2>Hero With Testimonial<\/h2>",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_63f357d6800d3",
+            "label": "Select to Background Option",
+            "name": "acf_select_to_hwt_background_option",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "image": "Background Image",
+                "color": "Background Color"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_63f357d683c3a",
+            "label": "Background Image",
+            "name": "acf_hwt_background_image",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_63f357d6800d3",
+                        "operator": "==",
+                        "value": "image"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_63f357d687847",
+            "label": "Background Color",
+            "name": "acf_hwt_background_color",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_63f357d6800d3",
+                        "operator": "==",
+                        "value": "color"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_63f357d68ef54",
+            "label": "Heading",
+            "name": "acf_hwt_header",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_63f357d692c17",
+            "label": "Sub Heading",
+            "name": "acf_hwt_subline",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_63f357d696686",
+            "label": "Font Color",
+            "name": "acf_hwt_font_color",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_63f357d69a118",
+            "label": "Hero Banner Content",
+            "name": "acf_hwt_content",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_63f357d69dd54",
+            "label": "How Many Button you want to Display",
+            "name": "acf_hwt_button_option",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "one": "One",
+                "two": "Two"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_63f357d6a17db",
+            "label": "Button",
+            "name": "acf_hwt_button_one",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_63f357d69dd54",
+                        "operator": "==",
+                        "value": "one"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_63f357d69dd54",
+                        "operator": "==",
+                        "value": "two"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
+            "key": "field_63f357d6a5266",
+            "label": "Button Color",
+            "name": "acf_hwt_button_color",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_63f357d6a8cf1",
+            "label": "Button Font Color",
+            "name": "acf_hwt_button_font_color",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_63f357d6ac86f",
+            "label": "Button",
+            "name": "acf_hwt_button_two",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_63f357d69dd54",
+                        "operator": "==",
+                        "value": "two"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
+            "key": "field_63f357d6b0321",
+            "label": "Button Color",
+            "name": "acf_hwt_button_color_two",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_63f357d69dd54",
+                        "operator": "==",
+                        "value": "two"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_63f357d6b3f0f",
+            "label": "Button Font Color",
+            "name": "acf_hwt_button_font_color_two",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_63f357d69dd54",
+                        "operator": "==",
+                        "value": "two"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_63f35a0498184",
+            "label": "Display Post",
+            "name": "acf_hwt_display_post",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "no": "No",
+                "yes": "Yes"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_63f35a5b98185",
+            "label": "Testimonial Alignment",
+            "name": "acf_hwt_post_alignment",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_63f35a0498184",
+                        "operator": "==",
+                        "value": "yes"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "top": "Top",
+                "center": "Center",
+                "bottom": "Bottom"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_63f35aa598186",
+            "label": "Select Post Type",
+            "name": "acf_hwt_select_post_type",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_63f35a0498184",
+                        "operator": "==",
+                        "value": "yes"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "testimonial"
+            ],
+            "taxonomy": "",
+            "filters": "",
+            "elements": "",
+            "min": "",
+            "max": "",
+            "return_format": "object"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/hero-with-testimonial"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1676962495
+}

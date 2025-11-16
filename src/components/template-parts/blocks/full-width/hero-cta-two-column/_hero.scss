@@ -1,0 +1,129 @@
+.hero{
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    &__heading{
+        color: $white;
+        margin-bottom: 30px;
+        @include media-breakpoint-up(lg) {
+            margin-bottom: 60px;
+        }
+    }
+    .inner_grid{
+        margin: 30px 0;
+        padding: 40px 0;
+        @include media-breakpoint-up(lg) {
+            margin: 70px 0;
+            padding: 40px 0;
+        }
+    }
+    &__subhead{
+        color: $white;
+        margin-bottom: 34px;
+        font-family:$quicksand;
+    }
+    &__btn-group{
+
+        a{
+            width: 100%;
+            margin-bottom: 20px;
+            text-align: center;
+            @include media-breakpoint-up(md) {
+                width: auto;
+            }
+            &:first-child{
+                margin-right: 0;
+                @include media-breakpoint-up(md) {
+                    margin-right: 60px;
+                }
+            }
+        }
+    }
+    &--right{
+        text-align: right;
+    }
+    &--center{
+        text-align: center;
+        .inner_grid{
+            margin: 0;
+            padding: 40px 0 0 0;
+        }
+       
+        .hero__heading{
+            color: $large-font;
+        }
+        p{
+            margin-bottom: 40px;
+            padding: 0;
+            a{
+                border-bottom: 1px solid $sky;
+                &:hover{
+                    opacity: 0.5;
+                }
+            }
+        }
+    }
+}
+
+.heroCta-fullwidth{
+    text-align: center;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    p{
+        color: $white;
+    }
+    .inner_grid{
+        padding: 40px 0;
+    }
+    &--twocolumn{
+        padding-bottom: 40px;
+        .inner_grid{
+            padding: 40px 20px 0;
+        }
+        h2{
+            font-size: 40px;
+            line-height: 50px;
+            color:#fff;
+            margin-bottom: 30px;
+        }
+        p{
+            text-align: left;
+            a{
+                color: #fff;
+                border-bottom: 1px solid #ffffff4d;
+                &:hover{
+                    opacity: 0.5;
+                }
+            }
+            iframe{
+                @include media-breakpoint-down(md) {
+                        width: 100%;
+                        height: 200px;
+                } 
+            }
+        }
+        ul{
+            li{
+                text-align: left;
+                color: $white;
+                margin-bottom: 10px;
+                a{
+                    color: $white;
+                    border-bottom: 1px solid #ffffff4d;
+                    &:hover{
+                        opacity: 0.5;
+                    }
+                }
+            }
+        }
+    }
+}
+.hero-header{
+    text-align: center;
+    &__heading{
+        color: $white;
+    }
+}

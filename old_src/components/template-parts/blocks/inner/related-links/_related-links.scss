@@ -1,0 +1,45 @@
+.related-links{
+    margin-top: 25px;
+    // margin: 50px 0;
+    h2{
+        @include media-breakpoint-down(lg){
+            margin: 15px;
+        }
+    }
+    ul{
+        li{
+            margin-bottom: 8px;
+            a{
+                color: $sky;
+                border-bottom: 1px solid #0595a84d;
+                &:hover{
+                    color: $orange;
+                    border-bottom: 1px solid $orange;
+                }
+            }
+        }
+    }
+    &--double-column{
+        ul{
+            @include media-breakpoint-down(xxl){ 
+                display: flex;
+                flex-wrap: wrap;
+            }
+            li{
+                @include media-breakpoint-down(xl){ 
+                    float: none;
+                }
+                width: 100%;
+                float: none;
+                margin-right: 0;
+                
+                @include media-breakpoint-up(lg){          
+                    width: 46%;
+                    float: left;
+                    margin-right: 20px;
+                    }
+
+            }
+        }
+    }
+}

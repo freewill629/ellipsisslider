@@ -1,0 +1,54 @@
+// cta media
+
+
+.Cta-media{
+    padding: 20px;
+    &__btn{
+        margin-top: 40px;
+        text-align: center;
+    }
+    &__descreption{
+        img{
+            width: 50%;
+            float: right;
+            margin-right: -100px;
+        }
+        p{
+            color: $white;
+            margin-bottom: 15px;
+            &:first-child{
+                margin-bottom: 35px;
+            }
+        }
+        ul{           
+            margin: 20px;
+            li{
+                color: $white;
+                font-family: $arboria;
+                margin: 10px;
+            }
+        }
+    }
+}
+
+ 
+// cta icons
+.Cta-icons{
+    ul{           
+        margin: 20px;
+        li{
+            color: $color_black;
+            font-family: $arboria;
+            margin: 10px;
+        }
+    }
+    img{
+        width: 240px;
+        height: 240px;
+        margin: 0 auto;
+    }
+    &__btn{
+        text-align: center;
+       padding-bottom: 50PX;
+    }
+}

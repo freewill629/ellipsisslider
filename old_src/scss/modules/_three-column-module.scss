@@ -1,0 +1,42 @@
+.three-column-module{
+    &__block{
+        margin: 0 10px 0;
+        @include media-breakpoint-up(lg){
+            margin: 0 40px 20px;
+        }
+        @include media-breakpoint-up(xl){
+            margin: 0 65px 40px;
+        }
+    }
+    &__image{
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    &__col{
+        padding: 0;
+        @include media-breakpoint-up(lg){
+            padding: 10px;
+        }
+    }
+    &__btn{
+        margin-top: 35px;
+        a{
+            margin: 0 !important;
+        }
+    }
+    &__descreption{
+        h5{
+            font-weight: 600;
+            font-style: normal;
+            font-size: 16px;
+            letter-spacing: .1em;
+            line-height: 1.55em;
+            text-transform: uppercase;
+            color: $orange;
+            margin-bottom: 20px;
+        }
+        p{
+            font-size: 19px;
+        }
+    }
+}

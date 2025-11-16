@@ -1,0 +1,84 @@
+.blog{
+    &__box{
+        margin-bottom: 30px;
+        a{
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                @include media-breakpoint-up(md) {
+                    height: 250px;
+                }
+                @include media-breakpoint-up(lg) {
+                    height: 300px;
+                }
+                @include media-breakpoint-up(xl) {
+                    height: 400px;
+                }
+            }
+        }
+    }
+    &__category{
+        color: $blog-category-color;
+        margin: 10px 0;
+        .pattern-dot{
+            font-size: 35px;
+            padding: 2px;
+            line-height: 0;
+        }
+        a{
+            color: $blog-category-color;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 15px;
+            text-transform: none;
+            position: relative;
+           
+        }
+        span{
+            font-weight: 400;
+            font-style: normal;
+            font-size: 15px;
+            // padding-left: 20px;
+            position: relative;
+            // &::after{
+            //     content: '.';
+            //     font-size: 30px;
+            //     left: 5px;
+            //     position: absolute;
+            //     top: -8px
+            // }
+        }
+    }
+    &__heading{
+        font-weight: 600;
+        font-style: normal;
+        font-size: 30px;
+        letter-spacing: 0em;
+        line-height: 1em;
+        text-transform: none;
+        text-decoration: none;
+        color: $paragraph-font ;
+    }
+}
+.pagination{
+    padding-bottom: 50px;
+    align-items: center;
+    justify-content: center;
+    .page-numbers{
+        text-transform: uppercase;
+        font-size: 16px;
+        color: $orange;
+        margin: 7px;
+        font-weight: 600;
+
+    }
+    span.page-numbers.current{
+        color: $orange;
+        border-bottom: 2px solid $orange;
+    }
+    a{
+        color: $orange;
+    }
+
+}

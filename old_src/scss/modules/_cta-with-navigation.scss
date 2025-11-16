@@ -1,0 +1,109 @@
+.cta-with-navigation{
+    background-color: $bg-offwhite;
+    text-align: center;
+    .page-container {
+       // padding: 15px;
+        @include media-breakpoint-up(md){          
+            //padding: 0;
+            }
+        p{
+            margin-bottom: 0;
+            a{
+                color: $sky;
+                border-bottom: 1px solid $sky;
+                &:hover{
+                    opacity: 0.5;
+                }
+                
+            }
+        }
+    }
+    &__heading{
+        margin-bottom: 60px;
+        color: $large-font;
+    }
+    &__sub-heading{
+        font-weight: 600;
+        font-style: normal;
+        font-size: 24px;
+        letter-spacing: 0em;
+        line-height: 1em;
+        text-transform: none;
+        color: $large-font;
+        margin-bottom: 30px;
+        @include media-breakpoint-up(lg){  
+            font-size: 40px;
+            letter-spacing: 0em;
+            line-height: 1.2em;
+         }
+    }
+    &__links{
+        ul{
+            padding: 0;
+            margin-bottom: 0;
+            li{
+                list-style: none;
+                display: inline-block;
+                margin:5px;             
+                color: $sky;
+                &:last-child{
+                    &::after{
+                        display: none;
+                    }
+                }
+                a{
+                    color: $sky;
+                    border-bottom: 1px solid $sky;
+                    
+                }
+                &::after{
+                    position: relative;
+                    content: '-';
+                    left: 6px;
+                }
+            }
+        }
+ 
+    }
+    &__btns{
+        margin-top: 30px;
+    }
+    &--heading{
+   
+        .cta-with-navigation__heading{
+            color: $white;
+            margin-bottom: 0;
+        }
+    }
+    &--awards{
+        text-align: left;
+        .cta-with-navigation__heading{
+            text-align: center;
+            margin-bottom: 0;
+        }
+        .cta-with-navigation__awards-info{
+           display: block;
+           margin: 0;
+            @include media-breakpoint-up(md){          
+                display: flex;
+                align-items: center;
+                margin: 30px 0;
+                }
+        }
+        .award-image {
+            text-align: center;
+        }
+        .award-image img{
+            width: 155px;
+            margin-right: 0;
+            @include media-breakpoint-up(md){          
+                margin-right: 35px;
+                }
+        }
+    }
+    &--awards-innerpages{
+        .cta-with-navigation__heading{           
+            margin-bottom: 0;
+        }
+    }
+}

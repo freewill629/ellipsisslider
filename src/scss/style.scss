@@ -1,0 +1,38 @@
+@import "_variables";
+@import "_mixin";
+@import "_function";
+@import "base/bootstrap/bootstrap";
+@import "base/bootstrap/variables";
+@import "base/bootstrap/mixins";
+// fonts
+//@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+
+//new-fonts
+
+
+// Global css 
+@import "base/_reset";
+// Global modules
+
+@import "layout/_header";
+@import "layout/_main-footer";
+@import "layout/_sidebar";
+
+
+//TEMPLATE MODULES
+@import "modules/_hero";
+@import "modules/_text-with-media-icons";
+@import "modules/_four-column-module";
+@import "modules/_cta-with-navigation";
+@import "modules/_media-centered";
+@import "modules/_team";
+@import "modules/_team-slider";
+@import "modules/_two-col-module";
+@import "modules/_multiple-images";
+@import "modules/_one-column-module";
+@import "modules/news";
+@import "modules/three-column-module";
+@import "modules/four-column-computer-science";
+@import "modules/quote-block";
+@import "modules/_related-links";
+@import "modules/_library";

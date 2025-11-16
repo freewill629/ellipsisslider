@@ -1,0 +1,67 @@
+.center-content-with-texas-resources-slider {
+  padding: 70px 0;
+  &__center-module {
+    h6 {
+      color: #000;
+      font-size: 40px;
+    }
+    p {
+      color: #000;
+      font-size: 20px;
+      text-align: center;
+      line-height: 30px;
+    }
+  }
+}
+
+.texas-resources-slider {
+  &__grid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__img-box {
+    img {
+      width: 100%;
+    }
+  }
+  &__heading {
+    font-size: 35px;
+    font-weight: 600;
+    color: #000;
+  }
+  &__sub-heading {
+    font-size: 20px;
+    font-weight: 400;
+    color: #000;
+    padding: 15px 0;
+    line-height: 30px;
+    text-align: center;
+    @include media-breakpoint-up(lg) {
+      text-align: left;
+    }
+  }
+}
+.texas-resources-slider .slick-dots li button:before {
+  font-size: 15px;
+}
+.texas-resources-slider .slick-next.slick-disabled:before,
+.texas-resources-slider .slick-prev.slick-disabled:before {
+  opacity: 1;
+}
+.texas-resources-slider .slick-prev:before,
+.texas-resources-slider .slick-next:before {
+  font-size: 25px;
+  color: #000;
+}
+@media only screen and (max-width: 769px) {
+  .texas-resources-slider button.slick-prev.slick-arrow {
+    left: 2%;
+  }
+  .texas-resources-slider p {
+    text-align: center;
+  }
+  .texas-resources-slider button.slick-next.slick-arrow {
+    right: 2%;
+  }
+}

@@ -1,0 +1,20 @@
+.image-caption-module{
+    margin: 30px 0;
+    &__image{
+       img{
+        width: 100%;
+        margin-bottom: 10px;
+        @include media-breakpoint-up(md) {
+            margin-bottom: 0;
+        }
+       
+       }
+       h6{
+        font-size: 12px;
+        line-height: 16px;
+        margin-top: 30px;
+        margin-bottom: 0;
+        font-weight: 500;
+       }
+    }
+}

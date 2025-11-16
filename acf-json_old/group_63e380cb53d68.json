@@ -1,0 +1,120 @@
+{
+    "key": "group_63e380cb53d68",
+    "title": "Four Column With Post Type",
+    "fields": [
+        {
+            "key": "field_63e380cb60ff5",
+            "label": "Block Name",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "<h2> Four Column With Post Type <\/h2>",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_63e380cb64ad9",
+            "label": "Select Course Type",
+            "name": "select_fc_course_type",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "category",
+            "field_type": "select",
+            "allow_null": 0,
+            "add_term": 1,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "object",
+            "multiple": 0
+        },
+        {
+            "key": "field_63e380cb6c028",
+            "label": "Display Divider",
+            "name": "acf_fc_display_divider",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "no": "No",
+                "yes": "Yes"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_63e380cb68574",
+            "label": "Divider Option",
+            "name": "acf_fc_divider_option",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_63e380cb6c028",
+                        "operator": "==",
+                        "value": "yes"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "top": "Top",
+                "bottom": "Bottom",
+                "both": "Both"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value",
+            "save_other_choice": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/four-column-with-post-type"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1676009415
+}

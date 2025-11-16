@@ -1,0 +1,307 @@
+{
+    "key": "group_653a0729b9a79",
+    "title": "Hero Block",
+    "fields": [
+        {
+            "key": "field_653a08686d1e2",
+            "label": "Block Name",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "<h2> Hero Block <\/h2>",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_653a08876d1e3",
+            "label": "Image",
+            "name": "acf_hb_image",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_653a08a86d1e4",
+            "label": "Title",
+            "name": "acf_hb_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_653a08cf6d1e5",
+            "label": "Description",
+            "name": "acf_hb_description",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_653a08f16d1e6",
+            "label": "How Many Button you want to Display",
+            "name": "acf_hb_button_option",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "one": "One",
+                "two": "Two"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_653a091c6d1e7",
+            "label": "Button",
+            "name": "acf_hb_button_one",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_653a08f16d1e6",
+                        "operator": "==",
+                        "value": "one"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_653a08f16d1e6",
+                        "operator": "==",
+                        "value": "two"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "33.33",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
+            "key": "field_653a094b6d1e9",
+            "label": "Select Button Color",
+            "name": "acf_hb_select_button_color",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_653a08f16d1e6",
+                        "operator": "==",
+                        "value": "one"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_653a08f16d1e6",
+                        "operator": "==",
+                        "value": "two"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "33.33",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "orangebtn": "Orange",
+                "whitebtn": "White"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_653a09946d1eb",
+            "label": "Select Button Style",
+            "name": "acf_hb_select_button_style",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33.33",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "solid": "Solid",
+                "outline": "Outline"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_653a09dd6d1ec",
+            "label": "Button",
+            "name": "acf_hb_button_two",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_653a08f16d1e6",
+                        "operator": "==",
+                        "value": "two"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
+            "key": "field_653a0a146d1ed",
+            "label": "Select Button Color",
+            "name": "acf_hb_select_button_color_two",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_653a08f16d1e6",
+                        "operator": "==",
+                        "value": "two"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "33.33",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "orangebtn": "Orange",
+                "whitebtn": "White"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_653a0a4b6d1ee",
+            "label": "Select Button Style",
+            "name": "acf_hb_select_button_style_two",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_653a08f16d1e6",
+                        "operator": "==",
+                        "value": "two"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "33.33",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "solid": "Solid",
+                "outline": "Outline"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/hero-block"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1698302846
+}

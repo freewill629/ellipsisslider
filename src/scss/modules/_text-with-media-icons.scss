@@ -1,0 +1,200 @@
+// cta media
+
+
+.text-with-media{
+    &--nomedia{
+        margin-bottom: 50px;
+        .box-padding{
+            padding: 0 15px !important;
+        }
+        p{
+            text-align: center;
+        }
+    }
+    &--color-black{
+        padding: 50px 0;
+        .text-with-media__descreption{
+            p{
+                color: $paragraph-font;
+                a{
+                    color: $sky;
+                    border-bottom: 1px solid #0595a84d;
+                    &:hover{
+                        color: #0595a899;
+                        border-bottom: 1px solid #0595a826;
+                    }
+                }
+            }
+        }            
+    }
+    padding: 0;
+    @include media-breakpoint-up(md){
+       // padding: 20px; 
+    }
+    &__btn{
+        margin-top: 30px;
+        text-align: center;
+        a{
+            margin-bottom: 15px !important;
+        @include media-breakpoint-up(md){
+           margin-bottom: 0;
+        }
+    }
+    }
+    .color-black{
+        p{
+            color: #222;
+        }
+        ul {
+            li{
+                color: #222; 
+            }
+        }
+    }
+    &__descreption{
+        img{
+            width: 100%;
+            float: none;
+            margin-right: 0;
+            text-align: center;
+            margin: 0 auto;
+            display: block;
+            margin-bottom: 30px;
+            @include media-breakpoint-up(md){
+                width: 50%;
+            float: right;
+                margin-right: 0;
+                margin-bottom: 0;
+
+            }
+            @include media-breakpoint-up(lg) {
+                margin-right: -100px;
+            }
+        }
+        p{
+            color: $white;
+            margin-bottom: 15px;
+            &:last-child{
+                margin-bottom: 0 !important;
+            }
+            &:first-child{
+                margin-bottom: 35px;
+            }
+            a{
+                color: $white;
+                border-bottom: 1px solid #ffffff4d;
+                &:hover{
+                    border-bottom: 1px solid #ffffff99;
+                    color: #ffffff99;
+                }
+            }
+        }
+        ul{           
+            margin: 0;
+            @include media-breakpoint-up(lg) {
+                margin: 20px;
+            }
+            li{
+                color: $white;
+                font-family:$red-hat-display;
+                margin: 10px;
+            }
+        }
+        
+    }
+    .social-icon{
+        span{
+            color: #ffffffbf;
+            font-family:$red-hat-display;
+            font-size: 18px;
+            display: block;
+            margin-bottom: 30px;
+        }
+        ul{
+            padding: 0;
+            display: flex;
+            margin: 15px 0 0;
+            align-items: center;
+            justify-content: center;
+            li{
+                list-style: none;
+                a{
+                    color: $white;
+                    margin-right: 10px;
+                    &:hover{
+                        color: #ffffffbf;
+                    }
+                }
+            }
+        }
+    }
+}
+
+ 
+// cta icons
+.text-with-icons {
+    ul {
+        margin: 0px;
+        @include media-breakpoint-up(lg) {
+            margin: 20px;
+        }
+        li {
+            color: $color_black;
+            font-family:$red-hat-display;
+            margin: 10px;
+        }
+    }
+
+    img {
+        width: 240px;
+        height: 240px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    &__btn {
+        text-align: center;
+        padding-bottom: 50PX;
+    }
+}
+
+// video
+
+.group {
+    position: relative;
+    height:100%;
+    width: 100%;
+    overflow: hidden;
+    float: none;
+    margin: 0 auto 30px;
+    
+    @include media-breakpoint-up(lg){
+        height: 300px;
+        width: 530px;
+        float: right;
+        margin: 20px -42px 24px 30px;
+    }
+
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    #poster-image {
+       
+        background-size: cover;
+        bottom: 0;
+        left: 0;
+        opacity: 1.0;
+        position: relative;
+        right: 0;
+        top: 0;
+        z-index: 10;
+        height: 100%;
+        width: 100%;
+        transition: all 0.3s ease-in;
+    }
+}

@@ -1,0 +1,322 @@
+{
+    "key": "group_63c4eb2e24b59",
+    "title": "Text with Media",
+    "fields": [
+        {
+            "key": "field_63da5ea4fa908",
+            "label": "Block Name",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "<h2>Text with Media<\/h2>",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_63c4eb3fb7534",
+            "label": "Headline",
+            "name": "acf_text_with_media_headline",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_63c4edefb753a",
+            "label": "Background Color",
+            "name": "acf_text_with_colorpicker",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_63d8e7265afbf",
+            "label": "Content Font Color",
+            "name": "acf_twm_font_color",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "black": "Black",
+                "white": "White"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_63c4ebc2b7535",
+            "label": "Content",
+            "name": "acf_text_with_media_content",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_63d4eda469ed1",
+            "label": "How Many Button you want to Display",
+            "name": "acf_text_with_media_button_option",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "one": "One",
+                "two": "Two"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_63c4ecc5b7539",
+            "label": "Button",
+            "name": "acf_text_with_media_button_one",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_63d4eda469ed1",
+                        "operator": "==",
+                        "value": "one"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_63d4eda469ed1",
+                        "operator": "==",
+                        "value": "two"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "33.33",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
+            "key": "field_641ab11d84a44",
+            "label": "Select Button Color",
+            "name": "acf_text_with_media_select_button_color",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_63d4eda469ed1",
+                        "operator": "==",
+                        "value": "one"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_63d4eda469ed1",
+                        "operator": "==",
+                        "value": "two"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "33.33",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "orangebtn": "Orange",
+                "whitebtn": "White"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_63e4a83639b5d",
+            "label": "Select Button Style",
+            "name": "acf_text_with_media_select_button_style",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33.33",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "solid": "Solid",
+                "outline": "Outline"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_63d4ee2169ed2",
+            "label": "Button",
+            "name": "acf_text_with_media_button_two",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_63d4eda469ed1",
+                        "operator": "==",
+                        "value": "two"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "33.33",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
+            "key": "field_641ab19484a46",
+            "label": "Select Button Color",
+            "name": "acf_text_with_media_select_button_color_two",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_63d4eda469ed1",
+                        "operator": "==",
+                        "value": "two"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "33.33",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "orangebtn": "Orange",
+                "whitebtn": "White"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_63e4a91b39b5f",
+            "label": "Select Button Style",
+            "name": "acf_text_with_media_select_button_style_two",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_63d4eda469ed1",
+                        "operator": "==",
+                        "value": "two"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "33.33",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "solid": "Solid",
+                "outline": "Outline"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/text-with-media"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1679654107
+}

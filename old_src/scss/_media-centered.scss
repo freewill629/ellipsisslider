@@ -1,0 +1,58 @@
+.media-centered{
+    iframe{
+        width: 100%;
+    }
+}
+.center-content-module{
+ 
+    &__column{
+        margin: 30px 15px;
+        h3{
+            color: $white;
+        }
+        p{
+            color: $white;
+        }
+    }
+    &--color-black{
+        h3{
+            color: #4a4a4a;
+        }
+        p{
+            color: $paragraph-font;
+        }
+    }
+    &__tab_module{
+       padding-top: 40px;
+        .center-heading{
+            text-align: left;
+            a{
+                border-bottom: 1px solid #4a4a4a4d;
+                &:hover{
+                color: #4a4a4a99;
+                }
+            }            
+            
+        }
+    }
+    &__btn{
+        padding-top: 20px;
+        text-align: center;
+    }
+}
+.sales-items{
+    margin-bottom: 80px;
+    .whr-title{
+        a{
+            border-bottom: 1px solid #e279404d;
+            font-weight: 600;
+            font-style: normal;
+            font-size: 15.25px;
+            letter-spacing: .1em;
+            line-height: 1.55em;
+            text-transform: uppercase;
+            color: $orange;
+            font-family: $all-gothic;
+        }
+    }
+}

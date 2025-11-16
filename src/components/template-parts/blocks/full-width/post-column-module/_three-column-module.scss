@@ -1,0 +1,149 @@
+.three-column-module{
+    &__block{
+        margin: 0 10px 0;
+        @include media-breakpoint-up(lg){
+            margin: 0 40px 20px;
+        }
+        @include media-breakpoint-up(xl){
+            margin: 0 65px 40px;
+        }
+    }
+    &__image{
+        text-align: center;
+        margin-bottom: 30px;
+        max-height: 300px;
+    }
+    &__col{
+        padding: 0;
+        @include media-breakpoint-up(lg){
+            padding: 10px;
+        }
+    }
+    &__btn{
+        margin-top: 35px;
+        a{
+            margin: 0 !important;
+        }
+    }
+    &__descreption{
+        h5{
+            font-weight: 600;
+            font-style: normal;
+            font-size: 16px;
+            letter-spacing: .1em;
+            line-height: 1.55em;
+            text-transform: uppercase;
+            color: #000000;
+            margin-bottom: 20px;
+        }
+        p{
+            font-size: 19px;
+        }
+    }
+    &__form{
+        background-color: $white;
+        text-align: center;
+        padding: 40px;
+        border-radius: 30px;
+        .form_logo{
+            margin-bottom: 20px;
+        }
+        p{
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+            color: #000;
+            margin-bottom: 20px;
+        }
+        // form css
+
+        .hs-form-private {
+            display: block;
+            input{
+                width: 100%;
+                height: 48px;
+                background-color: rgba(217, 217, 217, 0.5);
+                border: none;
+                outline: none;
+                padding: 10px 25px;
+                border-radius: 50px;
+                color: #000;
+                &::placeholder{
+                    color: #000 !important;
+                    font-size: 16px;
+                }
+                
+            }
+          
+            .hs_submit.hs-submit{
+                margin-top: 30px;
+            }
+            .hs-error-msgs {
+                margin: 0;
+                padding: 0;
+            }
+        }
+    }
+}
+.post_iconWithcircle_Box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 320px;
+    height: 280px;
+    margin: 0 auto;
+  }
+  .post_iconBox {
+    background-color: #f4ead7;
+    padding: 20px 30px;
+    text-align: center;
+    height: 150px;
+    width: 320px;
+    margin:0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .post_iconBox_heading {
+    font-family: "Quicksand",sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    margin: 0;
+  }
+  .post_iconCircle {
+    width: 100px;
+    height: 100px;
+    background-color: #d8b86e;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: relative;
+    bottom: 22px;
+    font-weight: 200;
+    font-size: 55px;
+    font-family: "Quicksand", sans-serif;
+  }
+
+  @media only screen and (max-width:1200px) {
+    .post_iconBox {
+        margin: 0 30px;
+        width: 270px;
+    }
+    .post_iconBox_heading {
+        font-size: 22px;
+    }
+}
+  @media only screen and (max-width:991px) {
+    .post_iconWithcircle_Box {
+        margin: 50px auto 0px auto;
+    }
+    .post_iconBox {
+        margin: 0;
+        width: 320px;
+    }
+}
+
+
+

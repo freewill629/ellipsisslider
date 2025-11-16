@@ -1,0 +1,114 @@
+@mixin btns {
+    padding: 10px 16px;
+    color: $orange;
+    font-size: 14px;
+    line-height: 18px;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;   
+    z-index: 1;
+    font-family:$red-hat-display;
+    background-color: $white;
+    // transition: 0.7s ease all;
+    transition: background-color 170ms ease-out,color 170ms ease-out;
+    // display: flex;
+    // width: fit-content;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    box-shadow: none;
+    border-radius: 25px;
+    text-align: center;
+    border: 2px solid $orange;
+    line-height: 28px;
+    &:hover {
+        color: $white;
+        background-color: $orange;
+        opacity: 1;
+        // &:before {
+        //     width: 100%;
+        //     transition: 0.7s ease all;
+        // }
+        // &:after {
+        //     color: $white;
+        // }
+    }
+    // &:before {
+    //     content: "";
+    //     height: 100%;
+    //     width: 100%;
+    //     background-color: rgba(0, 0, 0, 0.3);
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     width: 0;
+    //     transition: 0.7s ease all;
+    //     z-index: -1;
+    // }
+}
+
+@mixin whitebtn2{
+    // box-shadow: 0 3px 0 0 #ebebeb;
+    color: #e27940;
+    background-color: #fff;
+    border-color: #fff;    
+    font-size: 21px;
+    font-weight: 700;
+    font-style: normal;
+    text-transform: none;
+    letter-spacing: 0em;
+    padding: 25px 46px;
+    font-family:$red-hat-display;
+    border-radius: 300px;
+    display: inline-block;
+    cursor: pointer;
+    line-height: 28px;
+    &:hover{
+        color: $orange;
+        opacity: 1;
+    }
+}
+
+@mixin whitebtn{
+    // box-shadow: 0 3px 0 0 #ebebeb;
+    padding: 25px 46px;
+    color: $orange;
+    font-size: 21px;
+    font-weight: 700;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    font-family:$red-hat-display;
+    z-index: 1;
+    background-color: #fff;
+    border-color: #fff;    
+    transition: 0.7s ease all;
+    display: inline-block;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 300px;
+    &:hover{
+        color: $black;
+        // &:before{
+        //     width: 100%;
+        //     transition: 0.7s ease all;
+        // }
+        // &:after{
+        //     color: $white;
+        // }
+    }
+    // &:before{
+    //     content: "";
+    //     height: 100%;
+    //     width: 100%;
+    //     background-color: #00000014;
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     width: 0;
+    //     transition: 0.7s ease all;
+    //     z-index: -1;
+    // }
+}
+
+

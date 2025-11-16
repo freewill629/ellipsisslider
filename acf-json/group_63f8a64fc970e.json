@@ -1,0 +1,116 @@
+{
+    "key": "group_63f8a64fc970e",
+    "title": "Custom Post Blocks",
+    "fields": [
+        {
+            "key": "field_63f8a64fd12e1",
+            "label": "Block Name",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "<h2> Custom Post Blocks <\/h2>",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_63f9a38099cba",
+            "label": "Post Layout Option",
+            "name": "acf_custom_post_layout_option",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "one": "One Column",
+                "two": "Two Column"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "two",
+            "layout": "horizontal",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_63f8a64fd4ef4",
+            "label": "Select Posts",
+            "name": "acf_select_stem_carred_post",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "post": "Post",
+                "course": "Course",
+                "featured": "My Stem Career",
+                "team": "Team",
+                "testimonial": "Testimonial",
+                "free-resource": "Free Resource",
+                "pilot-course": "Pilot Course"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_63f8a868f6974",
+            "label": "No Of Post Show In Page",
+            "name": "acf_stem_no_of_post_show_in_page",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": -1,
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/custom-post-blocks"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1678426615
+}

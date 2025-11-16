@@ -1,0 +1,25 @@
+.quote-block{
+    &__row{margin: 15px;
+        @include media-breakpoint-up(md){   
+            margin: 0 65px 40px; 
+        }
+    }
+    &__box{
+        text-align: center;
+        h3{
+            color: $black;
+            font-weight: 600;
+            font-style: normal;
+            font-size: 32px;
+            letter-spacing: 0em;
+            line-height:45px;
+            text-transform: none;
+            margin-bottom: 30px;
+            @include media-breakpoint-up(md){   
+                font-size: 45px;
+                letter-spacing: 0em;
+                line-height: 1.1em;
+            } 
+        }
+    }
+}

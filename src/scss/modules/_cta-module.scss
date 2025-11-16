@@ -1,0 +1,38 @@
+.cta-module{
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    .box-padding{
+        padding: 50px 15px;
+        @include media-breakpoint-up(lg){
+            padding: 100px 15px;
+        }
+    }
+    h3{
+        color: $white;
+        margin-bottom: 25px;
+    }
+    p{
+        color: $white;
+    }
+    &__btns{
+        a{
+            margin: 15px 15px 0 0;
+            @include media-breakpoint-up(lg){
+                margin: 15px 25px;
+            }
+        }
+    }
+    &--single-btn{
+        .box-padding{
+            padding: 40px 15px;
+            text-align: center;
+        }
+        .cta-module__btns{
+            a{
+                margin: 15px 0 0 0;
+            }
+        }
+    }
+}

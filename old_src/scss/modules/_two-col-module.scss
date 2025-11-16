@@ -1,0 +1,29 @@
+.two-col-module{
+   padding-top: 60px;
+   &__box{
+    .descreption{
+        margin-bottom: 40px;
+        h6{
+            color: $orange;
+            font-weight: 600;
+            font-style: normal;
+            font-size: 15.25px;
+            letter-spacing: .1em;
+            line-height: 1.55em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+    }   
+    .image-block{
+        text-align: center;
+         @include media-breakpoint-up(md){          
+        text-align: left;
+        }
+    }
+   }
+   &__two{
+    .row{
+        margin: 0 0;
+    }
+   }
+}

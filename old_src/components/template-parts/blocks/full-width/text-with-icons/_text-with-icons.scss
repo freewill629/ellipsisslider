@@ -1,0 +1,51 @@
+// cta media
+
+
+ 
+// cta icons
+.text-with-icons {
+    .text-icons{
+        //margin: 40px 0;
+    }
+    a{
+        text-align: center;
+        pointer-events: none;
+        h5{
+            font-size: 22px;
+            line-height: 30px;
+            font-weight: 600;
+            color: #000000;
+            margin: 20px 0;
+        }
+    }
+    p{
+        margin-bottom: 30px;
+    }
+    ul {
+        margin: 0px;
+        @include media-breakpoint-up(lg) {
+            margin: 20px;
+        }
+        li {
+            color: $color_black;
+            font-family: $arboria;
+            margin: 10px;
+        }
+    }
+
+    img {
+        height: 100px;
+        width: auto;
+        margin: 0 auto ;
+        display: block;
+        @include media-breakpoint-up(lg) {
+            height: 150px;
+        }
+    }
+   
+    &__btn {
+        text-align: center;
+        padding-bottom: 50PX;
+    }
+}
+

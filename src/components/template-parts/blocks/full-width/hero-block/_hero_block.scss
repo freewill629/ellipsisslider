@@ -1,0 +1,105 @@
+.hero_banner_main {
+    background: linear-gradient(269deg, #AAD0BF 20.26%, #F5F5F5 102.31%);
+    padding: 100px 0;
+    position: relative;
+    z-index: 1;
+
+    &::after {
+        content: '';
+        background-image: url(/wp-content/themes/codelicious/assets/images/pattern-one.png);
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        overflow: hidden;
+        z-index: -1;
+        right: -18%;
+
+        @include media-breakpoint-down(lg) {
+            right: inherit;
+        }
+    }
+
+    .hero_banner {
+        &__inner {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            gap: 30px;
+
+            @include media-breakpoint-down(lg) {
+                display: block;
+            }
+        }
+
+        &__details {
+            width: 50%;
+
+            @include media-breakpoint-down(lg) {
+                width: 100%;
+                margin-bottom: 70px;
+            }
+
+            .styleh3 {
+                color: #000;
+                font-family: $quicksand;
+                font-size: 33px;
+                font-weight: 700;
+                font-style: normal;
+                line-height: normal;
+                margin-bottom: 30px;
+            }
+
+            p {
+                font-family: $red-hat-display;
+                color: #000;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 35px;
+                margin-bottom: 30px;
+            }
+
+            .orange-border {
+                border: 2px solid $orange;
+            }
+        }
+
+        &__curvedimage {
+            width: 50%;
+
+            @include media-breakpoint-down(lg) {
+                width: 100%;
+            }
+        }
+
+        &__curvedimage {
+            img {
+                width: 100%;
+            }
+
+            .curvedimage-img {
+                position: relative;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    background-color: #fff;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 0px 80px 0px 0px;
+                    left: 15px;
+                    top: -15px;
+                    z-index: -1;
+                }
+            }
+        }
+    }
+
+}
+.hero_banner__btns-solid-transperant a:first-child {
+    margin-right: 35px;
+}

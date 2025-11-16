@@ -1,0 +1,20 @@
+.share-btns{
+    margin: 20px 0;
+    &__social-links{
+        ul{
+            padding: 0;
+            list-style: none;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            li{                
+                margin: 5px;
+                a{
+                    color: #b0b0b0;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}

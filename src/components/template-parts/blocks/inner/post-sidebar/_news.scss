@@ -1,0 +1,74 @@
+.news{
+    margin: 0 0 100px 0;  
+    .border-box{
+        border-top: 1px solid #b0b0b080;
+        border-bottom: 1px solid #b0b0b080;
+        padding: 30px 0;
+    }
+    &__row{
+        div{
+            text-align: center;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 18px;
+            letter-spacing: 0em;
+            line-height: 1.8em;
+            text-transform: none;
+            color: $paragraph-font;
+            font-family:$quicksand;
+        }
+        div.col-lg-4{
+           div{
+            padding: 0 15px;
+            @include media-breakpoint-up(lg) {
+                width: 0 15px;;
+            }
+           }
+        }
+        
+    }
+    &__heading{
+     
+    }
+    &__link{
+        a{
+            //padding:10px 17px 0.5px;
+            color: $sky;
+            border-bottom: 1px solid #0595a84d;
+            &:hover{
+                color: $orange;
+                border-bottom: 1px solid $orange;
+            }
+        }
+    }
+    &__date{
+        
+    }
+}
+
+.courses-innerpages{
+    &__content{
+        h3{
+            color: #4a4a4a;
+            margin: 30px 0;
+        }
+        ul{
+            li{
+                margin-bottom: 10px;
+            }
+        }
+        .courses-list{
+            // float: left;
+            // width: 50%;
+            // @include media-breakpoint-up(lg) {
+            //     width: 100%;
+            // }
+            width: 100%;
+        }
+    }
+    &--right-position{
+        .courses-innerpages__right{
+            order: 2;
+        }
+    }
+}

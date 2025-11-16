@@ -1,0 +1,24 @@
+.course-sidebar{
+    h3{
+        font-style: normal;
+       font-weight: 700;
+        font-size: 15.25px;
+        letter-spacing: .1em;
+        line-height: 1.55em;
+        text-transform: uppercase;
+        color: $orange;
+        font-family:$quicksand;
+        text-align: center;
+
+    }
+    p{
+        text-align: center;
+        a{
+            color: $sky;
+            border-bottom: 1px solid #0595a840;
+            &:hover{
+                opacity: 0.5;
+            }
+        }
+    }
+}

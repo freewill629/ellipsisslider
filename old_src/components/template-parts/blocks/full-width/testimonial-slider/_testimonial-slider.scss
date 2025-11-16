@@ -1,0 +1,94 @@
+.testimonial-slider{
+    padding: 60px 0;
+    &__heading{
+            text-align: center;
+            margin-bottom:40px;
+    }
+    &__row{
+        margin: 100px 0;
+        position: relative;
+        &::after{
+            content: '';
+            position: absolute;
+            position: absolute;
+            background-color: #F5F5F5;
+            height: 500px;
+            width: 100%;
+            top: -74px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            border-radius: 50px;
+            @include media-breakpoint-up(lg) {
+                height: 500px;
+                width: 800px; 
+            }
+        }
+    }
+}
+
+.testimonial-block{
+    
+    border-radius: 40px;
+    z-index: 2;    
+    &__column{
+        //background-color: $white;
+        padding:  30px 30px 60px 30px;
+        // box-shadow: 0px 4.64315px 12.3817px rgb(0 0 0 / 10%);
+        border-radius: 40px;
+        position: relative;
+        background-color: $white;
+        width: 92% !important;
+        margin: 5px auto 20px;
+        box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.1);
+        display: block !important;
+    }
+    &__client_info{
+        img{
+            border-radius: 50%;
+            height: 55px;
+            width: 55px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+        .Client-name{
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 18px;
+            text-align: left;
+            margin-bottom: 10px;
+            color: $black;
+        }
+        .client-designation {
+            color: #868992;
+            font-weight: 600;
+            font-size: 18px;
+            text-align: left;
+            line-height: 16px;
+        }
+        p{
+            margin-top: 10px;
+            text-align: left;
+            color: #808389;
+        }
+    }
+    .slick-dots{
+        bottom: -40px;
+    }
+    .slick-dots li button:before {
+        font-size: 15px;        
+    }
+    .slick-dots li.slick-active button:before{
+        opacity: 1;
+        color: $black;
+    }
+    .quote-image{
+        position: absolute;
+        top: 40px;
+        right: 24px;
+    }
+    .slick-initialized .slick-slide div{
+        text-align: center;
+    }
+}
