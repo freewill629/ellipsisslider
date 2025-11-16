@@ -1,14 +1,6 @@
 (function (blocks, blockEditor, components, element) {
   const { registerBlockType } = blocks;
-  const {
-    InspectorControls,
-    MediaUpload,
-    MediaUploadCheck,
-    PanelColorSettings,
-    RichText,
-    URLInputButton,
-    useBlockProps,
-  } = blockEditor;
+  const { InspectorControls, MediaUpload, MediaUploadCheck, RichText, URLInputButton, useBlockProps } = blockEditor;
   const { PanelBody, TextControl, TextareaControl, Button } = components;
   const { Fragment } = element;
 
@@ -64,19 +56,7 @@
         setAttributes({ slides: updated });
       };
 
-      const colorStyles = {
-        '--hour-ai-bg': attributes.backgroundColor,
-        '--hour-ai-text': attributes.textColor,
-        '--hour-ai-accent': attributes.accentColor,
-        '--hour-ai-button-hover': attributes.buttonHoverColor,
-        '--hour-ai-button-text': attributes.buttonTextColor,
-        '--hour-ai-overlay-strong': attributes.overlayStrongColor,
-        '--hour-ai-overlay-accent': attributes.overlayAccentColor,
-        '--hour-ai-dot': attributes.dotColor,
-        '--hour-ai-dot-active': attributes.dotActiveColor,
-      };
-
-      const blockProps = useBlockProps({ className: 'hour-ai-slider hour-ai-slider--preview', style: colorStyles });
+      const blockProps = useBlockProps({ className: 'hour-ai-slider hour-ai-slider--preview' });
 
       return element.createElement(
         Fragment,
@@ -130,57 +110,7 @@
                 onChange: (value) => updateSlide(index, 'layout', value || 'image-left'),
               })
             )
-          ),
-          element.createElement(PanelColorSettings, {
-            title: 'Colors',
-            colorSettings: [
-              {
-                label: 'Background',
-                value: attributes.backgroundColor,
-                onChange: (value) => setAttributes({ backgroundColor: value || '#0A1744' }),
-              },
-              {
-                label: 'Text',
-                value: attributes.textColor,
-                onChange: (value) => setAttributes({ textColor: value || '#F2F5FF' }),
-              },
-              {
-                label: 'Accent / Button',
-                value: attributes.accentColor,
-                onChange: (value) => setAttributes({ accentColor: value || '#6A4DF3' }),
-              },
-              {
-                label: 'Button Hover',
-                value: attributes.buttonHoverColor,
-                onChange: (value) => setAttributes({ buttonHoverColor: value || '#583BD7' }),
-              },
-              {
-                label: 'Button Text',
-                value: attributes.buttonTextColor,
-                onChange: (value) => setAttributes({ buttonTextColor: value || '#F2F5FF' }),
-              },
-              {
-                label: 'Overlay (strong)',
-                value: attributes.overlayStrongColor,
-                onChange: (value) => setAttributes({ overlayStrongColor: value || 'rgba(10, 23, 68, 0.92)' }),
-              },
-              {
-                label: 'Overlay (accent)',
-                value: attributes.overlayAccentColor,
-                onChange: (value) => setAttributes({ overlayAccentColor: value || 'rgba(106, 77, 243, 0.45)' }),
-              },
-              {
-                label: 'Dot',
-                value: attributes.dotColor,
-                onChange: (value) => setAttributes({ dotColor: value || 'rgba(255, 255, 255, 0.45)' }),
-              },
-              {
-                label: 'Dot Active',
-                value: attributes.dotActiveColor,
-                onChange: (value) => setAttributes({ dotActiveColor: value || '#F2F5FF' }),
-              },
-            ],
-          })
+          )
         ),
         element.createElement(
           'div',
@@ -198,9 +128,9 @@
                 element.createElement(
                   'div',
                   { className: 'hour-ai-slide__inner' },
-                element.createElement(
-                  'div',
-                  { className: 'hour-ai-slide__copy' },
+                  element.createElement(
+                    'div',
+                    { className: 'hour-ai-slide__copy' },
                     element.createElement(RichText, {
                       tagName: 'h2',
                       className: 'hour-ai-slide__title',
@@ -212,17 +142,7 @@
                       className: 'hour-ai-slide__description',
                       value: slide.description,
                       onChange: (value) => updateSlide(index, 'description', value),
-                    }),
-                    slide.ctaLabel
-                      ? element.createElement(
-                          'a',
-                          {
-                            className: 'hour-ai-button',
-                            href: slide.ctaUrl || '#',
-                          },
-                          slide.ctaLabel
-                        )
-                      : null
+                    })
                   )
                 ),
                 slide.imageUrl &&

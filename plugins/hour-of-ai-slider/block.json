@@ -58,42 +58,6 @@
           "layout": { "type": "string" }
         }
       }
-    },
-    "backgroundColor": {
-      "type": "string",
-      "default": "#0A1744"
-    },
-    "textColor": {
-      "type": "string",
-      "default": "#F2F5FF"
-    },
-    "accentColor": {
-      "type": "string",
-      "default": "#6A4DF3"
-    },
-    "buttonHoverColor": {
-      "type": "string",
-      "default": "#583BD7"
-    },
-    "buttonTextColor": {
-      "type": "string",
-      "default": "#F2F5FF"
-    },
-    "overlayStrongColor": {
-      "type": "string",
-      "default": "rgba(10, 23, 68, 0.92)"
-    },
-    "overlayAccentColor": {
-      "type": "string",
-      "default": "rgba(106, 77, 243, 0.45)"
-    },
-    "dotColor": {
-      "type": "string",
-      "default": "rgba(255, 255, 255, 0.45)"
-    },
-    "dotActiveColor": {
-      "type": "string",
-      "default": "#F2F5FF"
     }
   },
   "editorScript": "file:./block.js",

@@ -5,8 +5,8 @@
   margin: 2.5rem auto;
   border-radius: 18px;
   overflow: hidden;
-  background: var(--hour-ai-bg, #0a1744);
-  color: var(--hour-ai-text, #f2f5ff);
+  background: #0a1744;
+  color: #f2f5ff;
   box-shadow: 0 20px 60px rgba(10, 23, 68, 0.35);
   isolation: isolate;
 }
@@ -49,12 +49,7 @@
 .hour-ai-slide__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    110deg,
-    var(--hour-ai-overlay-strong, rgba(10, 23, 68, 0.92)) 0%,
-    var(--hour-ai-overlay-strong, rgba(10, 23, 68, 0.92)) 60%,
-    var(--hour-ai-overlay-accent, rgba(106, 77, 243, 0.45)) 100%
-  );
+  background: linear-gradient(110deg, rgba(10, 23, 68, 0.92), rgba(10, 23, 68, 0.75), rgba(106, 77, 243, 0.45));
 }
 
 .hour-ai-slide__inner {
@@ -77,7 +72,7 @@
   line-height: 1.1;
   font-weight: 800;
   margin: 0 0 1rem;
-  color: var(--hour-ai-text, #f2f5ff);
+  color: #f2f5ff;
 }
 
 .hour-ai-slide__description {
@@ -85,13 +80,13 @@
   line-height: 1.7;
   opacity: 0.9;
   margin: 0 0 1.5rem;
-  color: var(--hour-ai-text, #f2f5ff);
+  color: #f2f5ff;
 }
 
 .hour-ai-button {
   display: inline-block;
-  background: var(--hour-ai-accent, #6a4df3);
-  color: var(--hour-ai-button-text, #f2f5ff);
+  background: #6a4df3;
+  color: #f2f5ff;
   padding: 0.85rem 1.6rem;
   border-radius: 12px;
   font-weight: 700;
@@ -102,11 +97,11 @@
 
 .hour-ai-button:hover {
   transform: translateY(-1px);
-  background: var(--hour-ai-button-hover, #583bd7);
+  background: #583bd7;
 }
 
 .hour-ai-button:focus-visible {
-  outline: 2px solid var(--hour-ai-accent, #00d4ff);
+  outline: 2px solid #00d4ff;
   outline-offset: 2px;
 }
 
@@ -132,14 +127,14 @@
   width: 12px;
   height: 12px;
   border-radius: 999px;
-  background: var(--hour-ai-dot, rgba(255, 255, 255, 0.45));
+  background: rgba(255, 255, 255, 0.45);
   border: none;
   cursor: pointer;
   transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .hour-ai-slider__dot.is-active {
-  background: var(--hour-ai-dot-active, #f2f5ff);
+  background: #f2f5ff;
   transform: scale(1.05);
 }
 
