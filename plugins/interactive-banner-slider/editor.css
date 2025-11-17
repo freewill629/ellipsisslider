@@ -1,0 +1,25 @@
+.ai-banner-slider.ai-banner-slider--editor {
+  box-shadow: none;
+  margin: 0;
+  max-width: 100%;
+  background: #0b1224;
+}
+
+.ai-banner-slider--editor .ai-banner-slide__bg {
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.85);
+}
+
+.ai-banner-slider--editor .ai-banner-slide__inner {
+  min-height: 240px;
+}
+
+.ai-banner-slider--editor .ai-banner-slide__title,
+.ai-banner-slider--editor .ai-banner-slide__description {
+  color: #e5e7eb;
+}
+
+.ai-banner-slider--editor .ai-banner-slide__dots {
+  display: none;
+}
