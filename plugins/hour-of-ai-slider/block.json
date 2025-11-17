@@ -15,12 +15,12 @@
       "type": "array",
       "default": [
         {
-          "title": "The Hour of AI is here",
+          "title": "The <span class=\"hour-ai-logo-text shimmer-text\">Hour of AI</span> is here",
           "description": "A global movement to make AI education accessible, engaging, and inspiring for every learner.",
           "ctaLabel": "Explore the Activity",
           "ctaUrl": "#",
           "imageUrl": "",
-          "layout": "image-left"
+          "layout": "image-right"
         },
         {
           "title": "Meet the Artificial Neuron",
@@ -28,7 +28,7 @@
           "ctaLabel": "Explore the Activity",
           "ctaUrl": "#",
           "imageUrl": "",
-          "layout": "two-column"
+          "layout": "image-right"
         },
         {
           "title": "What Students Will Learn",
@@ -36,7 +36,7 @@
           "ctaLabel": "Access the Activity",
           "ctaUrl": "#",
           "imageUrl": "",
-          "layout": "two-column"
+          "layout": "image-right"
         },
         {
           "title": "Start Your Hour of AI",
@@ -58,6 +58,50 @@
           "layout": { "type": "string" }
         }
       }
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": "#f6f7fb"
+    },
+    "headingColor": {
+      "type": "string",
+      "default": "#0f172a"
+    },
+    "bodyColor": {
+      "type": "string",
+      "default": "#1f2a44"
+    },
+    "buttonBackground": {
+      "type": "string",
+      "default": "#4f46e5"
+    },
+    "buttonTextColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "dotColor": {
+      "type": "string",
+      "default": "#cdd5f1"
+    },
+    "dotActiveColor": {
+      "type": "string",
+      "default": "#6b8bff"
+    },
+    "accentFrom": {
+      "type": "string",
+      "default": "#6c5ce7"
+    },
+    "accentMid": {
+      "type": "string",
+      "default": "#4f46e5"
+    },
+    "accentTo": {
+      "type": "string",
+      "default": "#22d3ee"
+    },
+    "slideSpeed": {
+      "type": "number",
+      "default": 9000
     }
   },
   "editorScript": "file:./block.js",

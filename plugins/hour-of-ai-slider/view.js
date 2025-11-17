@@ -17,6 +17,10 @@
     const slides = container.querySelectorAll('.hour-ai-slide');
     if (!slides.length) return;
 
+    const defaultInterval = 9000;
+    const configuredInterval = parseInt(container.dataset.speed, 10);
+    const interval = Number.isFinite(configuredInterval) && configuredInterval > 0 ? configuredInterval : defaultInterval;
+
     let current = 0;
     let timer = null;
 
@@ -26,7 +30,7 @@
     };
 
     const start = () => {
-      timer = window.setInterval(next, 7000);
+      timer = window.setInterval(next, interval);
     };
 
     const stop = () => {
