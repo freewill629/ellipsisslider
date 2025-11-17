@@ -1,0 +1,103 @@
+{
+  "apiVersion": 2,
+  "name": "hour-of-ai/hero-slider",
+  "title": "Hour of AI Hero Slider",
+  "category": "widgets",
+  "icon": "slides",
+  "description": "Campaign slider for the Hour of AI hero section with EllipsisEducation styling.",
+  "supports": {
+    "align": ["wide", "full"],
+    "anchor": true,
+    "html": false
+  },
+  "attributes": {
+    "slides": {
+      "type": "array",
+      "default": [
+        {
+          "title": "The Hour of AI is here",
+          "description": "A global movement to make AI education accessible, engaging, and inspiring for every learner.",
+          "ctaLabel": "Explore the Activity",
+          "ctaUrl": "#",
+          "imageUrl": "",
+          "layout": "image-left"
+        },
+        {
+          "title": "Meet the Artificial Neuron",
+          "description": "This lesson introduces the building blocks of AI through a fun beach decision model.",
+          "ctaLabel": "Explore the Activity",
+          "ctaUrl": "#",
+          "imageUrl": "",
+          "layout": "two-column"
+        },
+        {
+          "title": "What Students Will Learn",
+          "description": "Key takeaways that cover neurons, inputs, weights, bias, and experimentation.",
+          "ctaLabel": "Access the Activity",
+          "ctaUrl": "#",
+          "imageUrl": "",
+          "layout": "two-column"
+        },
+        {
+          "title": "Start Your Hour of AI",
+          "description": "Bring the foundations of artificial intelligence to your classroom with this free, one-hour activity.",
+          "ctaLabel": "Access the Activity",
+          "ctaUrl": "#",
+          "imageUrl": "",
+          "layout": "center"
+        }
+      ],
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": { "type": "string" },
+          "description": { "type": "string" },
+          "ctaLabel": { "type": "string" },
+          "ctaUrl": { "type": "string" },
+          "imageUrl": { "type": "string" },
+          "layout": { "type": "string" }
+        }
+      }
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": "#0A1744"
+    },
+    "textColor": {
+      "type": "string",
+      "default": "#F2F5FF"
+    },
+    "accentColor": {
+      "type": "string",
+      "default": "#6A4DF3"
+    },
+    "buttonHoverColor": {
+      "type": "string",
+      "default": "#583BD7"
+    },
+    "buttonTextColor": {
+      "type": "string",
+      "default": "#F2F5FF"
+    },
+    "overlayStrongColor": {
+      "type": "string",
+      "default": "rgba(10, 23, 68, 0.92)"
+    },
+    "overlayAccentColor": {
+      "type": "string",
+      "default": "rgba(106, 77, 243, 0.45)"
+    },
+    "dotColor": {
+      "type": "string",
+      "default": "rgba(255, 255, 255, 0.45)"
+    },
+    "dotActiveColor": {
+      "type": "string",
+      "default": "#F2F5FF"
+    }
+  },
+  "editorScript": "file:./block.js",
+  "editorStyle": "file:./editor.css",
+  "style": "file:./style.css",
+  "viewScript": "file:./view.js"
+}

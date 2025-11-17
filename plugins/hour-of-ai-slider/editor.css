@@ -1,0 +1,28 @@
+.hour-ai-slider--preview {
+  background: var(--hour-ai-bg, #0a1744);
+  min-height: 520px;
+}
+
+.hour-ai-slider--preview .hour-ai-slide__track,
+.hour-ai-slider--preview .hour-ai-slide__bg {
+  position: relative;
+}
+
+.hour-ai-slider--preview .hour-ai-slide {
+  position: relative;
+  opacity: 1;
+  transform: none;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hour-ai-slider--preview .hour-ai-slider__dots {
+  position: static;
+  transform: none;
+  justify-content: center;
+  padding-bottom: 1.5rem;
+}
+
+.hour-ai-slider--preview .hour-ai-slider__dot {
+  background: var(--hour-ai-dot, rgba(255, 255, 255, 0.3));
+}
