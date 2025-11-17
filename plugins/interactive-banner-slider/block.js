@@ -10,7 +10,6 @@
       description: 'A global movement to make AI education accessible, engaging, and inspiring for every learner.',
       ctaText: 'Explore the Activity',
       ctaUrl: 'https://ellipsisedu.com/en/hourofai-artificialneuron',
-      backgroundImage: 'https://placehold.co/1200x600/1e1b4b/ffffff?text=Image+1',
       foregroundImage: '',
       layout: 'hero',
       bullets: [],
@@ -21,8 +20,7 @@
       description: 'This lesson introduces the building blocks of AI through a fun “beach decision” model.',
       ctaText: 'Explore the Activity',
       ctaUrl: 'https://ellipsisedu.com/en/hourofai-artificialneuron',
-      backgroundImage: 'https://placehold.co/1200x600/2a1a6f/ffffff?text=Image+2',
-      foregroundImage: 'https://placehold.co/600x400/3730a3/ffffff?text=Image+2',
+      foregroundImage: '',
       layout: 'split',
       bullets: [],
       footnote: '',
@@ -32,8 +30,7 @@
       description: 'Key takeaways that cover neurons, inputs, weights, bias, and experimentation.',
       ctaText: 'Access the Activity',
       ctaUrl: 'https://ellipsisedu.com/en/hourofai-artificialneuron',
-      backgroundImage: 'https://placehold.co/1200x600/4c1d95/ffffff?text=Image+3',
-      foregroundImage: 'https://placehold.co/600x400/4c1d95/ffffff?text=Image+3',
+      foregroundImage: '',
       layout: 'list',
       bullets: [
         'Understand what an artificial neuron is and how it makes decisions.',
@@ -48,7 +45,6 @@
       description: 'Bring the building blocks of artificial intelligence to your students with this free, one-hour activity.',
       ctaText: 'Access the Activity Now',
       ctaUrl: 'https://ellipsisedu.com/en/hourofai-artificialneuron',
-      backgroundImage: 'https://placehold.co/1200x600/111827/ffffff?text=Image+4',
       foregroundImage: '',
       layout: 'cta',
       bullets: [],
@@ -134,28 +130,13 @@
                 label: 'Layout',
                 value: slide.layout,
                 options: [
-                  { label: 'Hero (background image)', value: 'hero' },
+                  { label: 'Hero (immersive)', value: 'hero' },
                   { label: 'Split (text + image)', value: 'split' },
                   { label: 'List (text + bullets)', value: 'list' },
                   { label: 'Centered CTA', value: 'cta' },
                 ],
                 onChange: (value) => updateSlide(index, 'layout', value || 'hero'),
               }),
-              createElement(
-                MediaUploadCheck,
-                null,
-                createElement(MediaUpload, {
-                  onSelect: (media) => updateSlide(index, 'backgroundImage', media?.url || ''),
-                  allowedTypes: ['image'],
-                  value: slide.backgroundImage,
-                  render: ({ open }) =>
-                    createElement(
-                      Button,
-                      { onClick: open, isSecondary: true },
-                      slide.backgroundImage ? 'Change background' : 'Choose background'
-                    ),
-                })
-              ),
               createElement(
                 MediaUploadCheck,
                 null,
@@ -197,7 +178,7 @@
                   className: `ai-banner-slide layout-${slide.layout || 'hero'} ${index === 0 ? 'is-active' : ''}`,
                   key: index,
                 },
-                createElement('div', { className: 'ai-banner-slide__bg', style: slide.backgroundImage ? { backgroundImage: `url(${slide.backgroundImage})` } : undefined }, createElement('span', { className: 'ai-banner-slide__overlay' })),
+                createElement('div', { className: 'ai-banner-slide__bg' }, createElement('span', { className: 'ai-banner-slide__overlay' })),
                 createElement(
                   'div',
                   { className: 'ai-banner-slide__inner' },
