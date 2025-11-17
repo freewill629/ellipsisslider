@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
+
+.ai-banner-slider {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  overflow: hidden;
+  border-radius: 24px;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.25);
+  background: #0f172a;
+}
+
+.ai-banner-slider__viewport {
+  position: relative;
+  width: 100%;
+  height: 700px;
+}
+
+@media (min-width: 768px) {
+  .ai-banner-slider__viewport {
+    height: 550px;
+  }
+}
+
+.ai-banner-slide {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  opacity: 0;
+  transform: scale(0.98);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  color: #ffffff;
+}
+
+.ai-banner-slide.is-active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 2;
+}
+
+.ai-banner-slide__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.9);
+  animation: kenburns 18s ease-out infinite;
+}
+
+.ai-banner-slide__overlay {
+  position: absolute;
+  inset: 0;
+  display: block;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.65) 10%, rgba(0, 0, 0, 0.25) 60%, rgba(0, 0, 0, 0.65));
+}
+
+.ai-banner-slide__inner {
+  position: relative;
+  z-index: 3;
+  width: min(1100px, 92vw);
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 2rem;
+  padding: 2rem 1.5rem 3rem;
+}
+
+@media (min-width: 992px) {
+  .ai-banner-slide__inner {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 3rem 3rem 4rem;
+  }
+}
+
+.ai-banner-slide__content {
+  align-self: end;
+  max-width: 640px;
+}
+
+.ai-banner-slide__title {
+  font-size: clamp(2.25rem, 4vw + 1rem, 4rem);
+  font-weight: 900;
+  line-height: 1.05;
+  margin: 0 0 0.75rem;
+}
+
+.ai-banner-slide__description {
+  font-size: clamp(1.1rem, 1vw + 0.9rem, 1.5rem);
+  line-height: 1.55;
+  margin: 0 0 1.25rem;
+  color: #e2e8f0;
+}
+
+.ai-banner-button {
+  display: inline-block;
+  padding: 0.9rem 1.6rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #2563eb, #4f46e5);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 10px 30px rgba(79, 70, 229, 0.45);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ai-banner-button:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 16px 36px rgba(79, 70, 229, 0.55);
+}
+
+.ai-banner-slide__bullets {
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.ai-banner-slide__bullets li {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  line-height: 1.45;
+  font-size: 1.05rem;
+}
+
+.ai-banner-slide__bullets li::before {
+  content: '✓';
+  color: #34d399;
+  font-weight: 700;
+}
+
+.ai-banner-slide__fg {
+  align-self: center;
+  justify-self: center;
+  max-width: 520px;
+  width: 100%;
+  position: relative;
+  z-index: 3;
+}
+
+.ai-banner-slide__fg img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 15px 60px rgba(0, 0, 0, 0.35);
+}
+
+.ai-banner-slide__footnote {
+  margin-top: 1.2rem;
+  font-size: 0.95rem;
+  color: #cbd5e1;
+}
+
+.ai-banner-slider__dots {
+  position: absolute;
+  display: flex;
+  gap: 0.5rem;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+}
+
+.ai-banner-slider__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.45);
+  border: 2px solid rgba(255, 255, 255, 0.65);
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.ai-banner-slider__dot.is-active {
+  width: 30px;
+  background: linear-gradient(90deg, #8b5cf6, #22d3ee);
+  border-color: transparent;
+  box-shadow: 0 4px 14px rgba(34, 211, 238, 0.5);
+}
+
+.ai-gradient-text {
+  background: linear-gradient(90deg, #9333ea 0%, #ec4899 45%, #f59e0b 70%, #9333ea 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 6s linear infinite;
+  background-size: 200% 200%;
+}
+
+/* Layout nuances */
+.ai-banner-slide.layout-hero .ai-banner-slide__content {
+  grid-column: span 2;
+}
+
+.ai-banner-slide.layout-hero .ai-banner-slide__inner {
+  align-items: end;
+}
+
+.ai-banner-slide.layout-split .ai-banner-slide__inner,
+.ai-banner-slide.layout-list .ai-banner-slide__inner {
+  align-items: center;
+}
+
+.ai-banner-slide.layout-list .ai-banner-slide__content {
+  max-width: 720px;
+}
+
+.ai-banner-slide.layout-cta .ai-banner-slide__inner {
+  grid-template-columns: 1fr;
+  text-align: center;
+  justify-items: center;
+}
+
+.ai-banner-slide.layout-cta .ai-banner-slide__content {
+  max-width: 760px;
+}
+
+.ai-banner-slide.layout-cta .ai-banner-slide__description {
+  margin-bottom: 1.75rem;
+}
+
+/* Background overlays per layout */
+.ai-banner-slide.layout-hero .ai-banner-slide__overlay {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.75) 15%, rgba(0, 0, 0, 0.35) 60%, rgba(0, 0, 0, 0.75));
+}
+
+.ai-banner-slide.layout-split .ai-banner-slide__overlay,
+.ai-banner-slide.layout-list .ai-banner-slide__overlay {
+  background: radial-gradient(circle at 20% 20%, rgba(147, 51, 234, 0.45), transparent 40%),
+    radial-gradient(circle at 80% 30%, rgba(59, 130, 246, 0.35), transparent 50%),
+    linear-gradient(120deg, rgba(15, 23, 42, 0.9), rgba(30, 27, 75, 0.8));
+}
+
+.ai-banner-slide.layout-cta .ai-banner-slide__overlay {
+  background: linear-gradient(160deg, rgba(17, 24, 39, 0.92), rgba(15, 23, 42, 0.92));
+}
+
+/* Animations */
+@keyframes kenburns {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.ai-banner-slider--editor .ai-banner-slide__overlay {
+  display: none;
+}
+
+.ai-banner-slider--editor .ai-banner-slide {
+  position: relative;
+  opacity: 1;
+  transform: none;
+  inset: auto;
+  margin-bottom: 1.5rem;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.ai-banner-slider--editor .ai-banner-slide__bg {
+  min-height: 260px;
+}
