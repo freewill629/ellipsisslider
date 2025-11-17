@@ -3,25 +3,24 @@
 .ai-banner-slider {
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   position: relative;
-  width: min(100%, 1380px);
-  margin: 2.5rem auto;
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto;
   overflow: hidden;
-  border-radius: 28px;
-  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.28);
-  background: radial-gradient(circle at 20% 20%, rgba(90, 103, 216, 0.2), transparent 32%),
-    radial-gradient(circle at 82% 35%, rgba(34, 211, 238, 0.16), transparent 30%),
-    linear-gradient(135deg, #0a0f25, #0d1838 45%, #0b122c);
+  border-radius: 24px;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.25);
+  background: #0f172a;
 }
 
 .ai-banner-slider__viewport {
   position: relative;
   width: 100%;
-  height: clamp(680px, 78vh, 940px);
+  height: 700px;
 }
 
 @media (min-width: 768px) {
   .ai-banner-slider__viewport {
-    height: clamp(740px, 70vh + 6vw, 980px);
+    height: 550px;
   }
 }
 
@@ -46,75 +45,44 @@
 .ai-banner-slide__bg {
   position: absolute;
   inset: 0;
-  overflow: hidden;
-  background: linear-gradient(135deg, rgba(12, 18, 39, 0.95), rgba(22, 28, 57, 0.92));
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.9);
+  animation: kenburns 18s ease-out infinite;
 }
 
 .ai-banner-slide__overlay {
   position: absolute;
   inset: 0;
   display: block;
-  background: linear-gradient(180deg, rgba(7, 12, 26, 0.8) 5%, rgba(7, 12, 26, 0.35) 60%, rgba(7, 12, 26, 0.75));
-}
-
-.ai-banner-slide__bg::before,
-.ai-banner-slide__bg::after {
-  content: '';
-  position: absolute;
-  inset: -20%;
-  opacity: 0.65;
-  pointer-events: none;
-}
-
-.ai-banner-slide__bg::before {
-  background-image:
-    radial-gradient(circle at 20% 20%, rgba(88, 28, 135, 0.35), transparent 32%),
-    radial-gradient(circle at 80% 30%, rgba(59, 130, 246, 0.28), transparent 30%),
-    radial-gradient(circle at 70% 80%, rgba(16, 185, 129, 0.2), transparent 28%);
-  filter: blur(8px);
-  animation: drift 22s linear infinite;
-}
-
-.ai-banner-slide__bg::after {
-  background-image:
-    linear-gradient(120deg, rgba(255, 255, 255, 0.08) 0, rgba(255, 255, 255, 0.02) 35%, transparent 60%),
-    repeating-linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.08) 0,
-      rgba(255, 255, 255, 0.08) 2px,
-      transparent 2px,
-      transparent 18px
-    );
-  mix-blend-mode: screen;
-  animation: shimmer 16s linear infinite;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.65) 10%, rgba(0, 0, 0, 0.25) 60%, rgba(0, 0, 0, 0.65));
 }
 
 .ai-banner-slide__inner {
   position: relative;
   z-index: 3;
-  width: min(1180px, 94vw);
+  width: min(1100px, 92vw);
   height: 100%;
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
   gap: 2rem;
-  padding: 2.25rem 1.75rem 3.25rem;
+  padding: 2rem 1.5rem 3rem;
 }
 
 @media (min-width: 992px) {
   .ai-banner-slide__inner {
-    grid-template-columns: 1.1fr 0.9fr;
-    align-items: center;
-    padding: 3.25rem 3.25rem 4.25rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 3rem 3rem 4rem;
   }
 }
 
 .ai-banner-slide__content {
-  align-self: center;
-  max-width: 720px;
+  align-self: end;
+  max-width: 640px;
 }
 
 .ai-banner-slide__title {
-  font-size: clamp(2.45rem, 4vw + 1rem, 4.35rem);
+  font-size: clamp(2.25rem, 4vw + 1rem, 4rem);
   font-weight: 900;
   line-height: 1.05;
   margin: 0 0 0.75rem;
@@ -169,21 +137,15 @@
 .ai-banner-slide__fg {
   align-self: center;
   justify-self: center;
-  max-width: 620px;
+  max-width: 520px;
   width: 100%;
-  max-height: min(78vh, 880px);
   position: relative;
   z-index: 3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .ai-banner-slide__fg img {
-  width: auto;
+  width: 100%;
   height: auto;
-  max-width: 100%;
-  max-height: 100%;
   border-radius: 16px;
   box-shadow: 0 15px 60px rgba(0, 0, 0, 0.35);
 }
@@ -238,7 +200,6 @@
 
 .ai-banner-slide.layout-hero .ai-banner-slide__inner {
   align-items: end;
-  justify-content: center;
 }
 
 .ai-banner-slide.layout-split .ai-banner-slide__inner,
@@ -266,32 +227,30 @@
 
 /* Background overlays per layout */
 .ai-banner-slide.layout-hero .ai-banner-slide__overlay {
-  background: linear-gradient(180deg, rgba(3, 7, 18, 0.9) 10%, rgba(12, 17, 38, 0.6) 50%, rgba(3, 7, 18, 0.9));
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.75) 15%, rgba(0, 0, 0, 0.35) 60%, rgba(0, 0, 0, 0.75));
 }
 
 .ai-banner-slide.layout-split .ai-banner-slide__overlay,
 .ai-banner-slide.layout-list .ai-banner-slide__overlay {
-  background: radial-gradient(circle at 20% 20%, rgba(147, 51, 234, 0.38), transparent 40%),
-    radial-gradient(circle at 82% 32%, rgba(14, 165, 233, 0.32), transparent 48%),
-    linear-gradient(120deg, rgba(8, 14, 28, 0.9), rgba(24, 22, 63, 0.85));
+  background: radial-gradient(circle at 20% 20%, rgba(147, 51, 234, 0.45), transparent 40%),
+    radial-gradient(circle at 80% 30%, rgba(59, 130, 246, 0.35), transparent 50%),
+    linear-gradient(120deg, rgba(15, 23, 42, 0.9), rgba(30, 27, 75, 0.8));
 }
 
 .ai-banner-slide.layout-cta .ai-banner-slide__overlay {
-  background: radial-gradient(circle at 22% 22%, rgba(236, 72, 153, 0.18), transparent 42%),
-    radial-gradient(circle at 76% 28%, rgba(34, 211, 238, 0.2), transparent 40%),
-    linear-gradient(160deg, rgba(10, 15, 32, 0.94), rgba(12, 20, 44, 0.92));
+  background: linear-gradient(160deg, rgba(17, 24, 39, 0.92), rgba(15, 23, 42, 0.92));
 }
 
 /* Animations */
+@keyframes kenburns {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
 @keyframes shimmer {
   0% { background-position: 200% 0; }
   100% { background-position: -200% 0; }
-}
-
-@keyframes drift {
-  0% { transform: translate3d(0, 0, 0) scale(1); }
-  50% { transform: translate3d(4%, 3%, 0) scale(1.04); }
-  100% { transform: translate3d(-2%, -4%, 0) scale(1); }
 }
 
 .ai-banner-slider--editor .ai-banner-slide__overlay {

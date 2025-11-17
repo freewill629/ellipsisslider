@@ -19,6 +19,7 @@ function ellipsis_interactive_banner_default_slides() {
       'description'      => __( 'A global movement to make AI education accessible, engaging, and inspiring for every learner.', 'ellipsis-interactive-banner' ),
       'ctaText'          => __( 'Explore the Activity', 'ellipsis-interactive-banner' ),
       'ctaUrl'           => 'https://ellipsisedu.com/en/hourofai-artificialneuron',
+      'backgroundImage'  => 'https://placehold.co/1200x600/1e1b4b/ffffff?text=Image+1',
       'foregroundImage'  => '',
       'layout'           => 'hero',
       'bullets'          => array(),
@@ -29,7 +30,8 @@ function ellipsis_interactive_banner_default_slides() {
       'description'      => __( 'This lesson introduces the building blocks of AI through a fun “beach decision” model.', 'ellipsis-interactive-banner' ),
       'ctaText'          => __( 'Explore the Activity', 'ellipsis-interactive-banner' ),
       'ctaUrl'           => 'https://ellipsisedu.com/en/hourofai-artificialneuron',
-      'foregroundImage'  => 'https://placehold.co/650x900/3730a3/ffffff?text=Portrait+Image',
+      'backgroundImage'  => 'https://placehold.co/1200x600/2a1a6f/ffffff?text=Image+2',
+      'foregroundImage'  => 'https://placehold.co/600x400/3730a3/ffffff?text=Image+2',
       'layout'           => 'split',
       'bullets'          => array(),
       'footnote'         => '',
@@ -39,7 +41,8 @@ function ellipsis_interactive_banner_default_slides() {
       'description'      => __( 'Key takeaways that cover neurons, inputs, weights, bias, and experimentation.', 'ellipsis-interactive-banner' ),
       'ctaText'          => __( 'Access the Activity', 'ellipsis-interactive-banner' ),
       'ctaUrl'           => 'https://ellipsisedu.com/en/hourofai-artificialneuron',
-      'foregroundImage'  => 'https://placehold.co/650x900/4c1d95/ffffff?text=Portrait+Image',
+      'backgroundImage'  => 'https://placehold.co/1200x600/4c1d95/ffffff?text=Image+3',
+      'foregroundImage'  => 'https://placehold.co/600x400/4c1d95/ffffff?text=Image+3',
       'layout'           => 'list',
       'bullets'          => array(
         __( 'Understand what an artificial neuron is and how it makes decisions.', 'ellipsis-interactive-banner' ),
@@ -54,6 +57,7 @@ function ellipsis_interactive_banner_default_slides() {
       'description'      => __( 'Bring the building blocks of artificial intelligence to your students with this free, one-hour activity.', 'ellipsis-interactive-banner' ),
       'ctaText'          => __( 'Access the Activity Now', 'ellipsis-interactive-banner' ),
       'ctaUrl'           => 'https://ellipsisedu.com/en/hourofai-artificialneuron',
+      'backgroundImage'  => 'https://placehold.co/1200x600/111827/ffffff?text=Image+4',
       'foregroundImage'  => '',
       'layout'           => 'cta',
       'bullets'          => array(),
@@ -119,6 +123,7 @@ function ellipsis_interactive_banner_render_callback( $attributes, $content ) {
   $dots_markup   = '';
 
   foreach ( $slides as $index => $slide ) {
+    $background = ! empty( $slide['backgroundImage'] ) ? sprintf( ' style="background-image:url(%s)"', esc_url( $slide['backgroundImage'] ) ) : '';
     $foreground = ! empty( $slide['foregroundImage'] ) ? sprintf( '<div class="ai-banner-slide__fg"><img src="%s" alt="" loading="lazy"></div>', esc_url( $slide['foregroundImage'] ) ) : '';
 
     $cta = ! empty( $slide['ctaText'] ) ? sprintf(
@@ -142,28 +147,29 @@ function ellipsis_interactive_banner_render_callback( $attributes, $content ) {
     $footnote = ! empty( $slide['footnote'] ) ? '<p class="ai-banner-slide__footnote">' . wp_kses_post( $slide['footnote'] ) . '</p>' : '';
 
     $slides_markup .= sprintf(
-      '<div class="ai-banner-slide layout-%8$s%9$s" data-index="%1$d">'
-        . '<div class="ai-banner-slide__bg"><span class="ai-banner-slide__overlay"></span></div>'
+      '<div class="ai-banner-slide layout-%6$s%7$s" data-index="%1$d">'
+        . '<div class="ai-banner-slide__bg"%2$s><span class="ai-banner-slide__overlay"></span></div>'
         . '<div class="ai-banner-slide__inner">'
           . '<div class="ai-banner-slide__content">'
-            . '<h2 class="ai-banner-slide__title">%2$s</h2>'
-            . '<p class="ai-banner-slide__description">%3$s</p>'
-            . '%4$s'
-            . '%5$s'
-            . '%6$s'
+            . '<h2 class="ai-banner-slide__title">%3$s</h2>'
+            . '<p class="ai-banner-slide__description">%4$s</p>'
+            . '%8$s'
+            . '%9$s'
+            . '%10$s'
           . '</div>'
-          . '%7$s'
+          . '%5$s'
         . '</div>'
       . '</div>',
       absint( $index ),
+      $background,
       wp_kses( $slide['title'], array( 'span' => array( 'class' => array() ) ) ),
       wp_kses_post( $slide['description'] ),
-      $cta,
-      $bullets_markup,
-      $footnote,
       $foreground,
       esc_attr( $slide['layout'] ? $slide['layout'] : 'hero' ),
-      0 === $index ? ' is-active' : ''
+      0 === $index ? ' is-active' : '',
+      $cta,
+      $bullets_markup,
+      $footnote
     );
 
     $dots_markup .= sprintf( '<button class="ai-banner-slider__dot%2$s" data-target="%1$d" aria-label="Slide %1$d"></button>', absint( $index ) + 1, 0 === $index ? ' is-active' : '' );
