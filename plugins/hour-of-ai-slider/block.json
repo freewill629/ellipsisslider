@@ -15,7 +15,7 @@
       "type": "array",
       "default": [
         {
-          "title": "The Hour of AI is here",
+          "title": "The <span class=\"hour-ai-logo-text shimmer-text\">Hour of AI</span> is here",
           "description": "A global movement to make AI education accessible, engaging, and inspiring for every learner.",
           "ctaLabel": "Explore the Activity",
           "ctaUrl": "#",
@@ -58,6 +58,50 @@
           "layout": { "type": "string" }
         }
       }
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": "#0b102b"
+    },
+    "headingColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "bodyColor": {
+      "type": "string",
+      "default": "#e5e7eb"
+    },
+    "buttonBackground": {
+      "type": "string",
+      "default": "#4f46e5"
+    },
+    "buttonTextColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "dotColor": {
+      "type": "string",
+      "default": "#cbd5e1"
+    },
+    "dotActiveColor": {
+      "type": "string",
+      "default": "#f59e0b"
+    },
+    "accentFrom": {
+      "type": "string",
+      "default": "#9333ea"
+    },
+    "accentMid": {
+      "type": "string",
+      "default": "#ec4899"
+    },
+    "accentTo": {
+      "type": "string",
+      "default": "#f59e0b"
+    },
+    "slideSpeed": {
+      "type": "number",
+      "default": 9000
     }
   },
   "editorScript": "file:./block.js",
