@@ -71,7 +71,6 @@
           "description": { "type": "string" },
           "ctaText": { "type": "string" },
           "ctaUrl": { "type": "string" },
-          "backgroundImage": { "type": "string" },
           "foregroundImage": { "type": "string" },
           "layout": { "type": "string" },
           "bullets": { "type": "array", "items": { "type": "string" } },

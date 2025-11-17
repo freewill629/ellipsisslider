@@ -123,7 +123,6 @@ function ellipsis_interactive_banner_render_callback( $attributes, $content ) {
   $dots_markup   = '';
 
   foreach ( $slides as $index => $slide ) {
-    $background = ! empty( $slide['backgroundImage'] ) ? sprintf( ' style="background-image:url(%s)"', esc_url( $slide['backgroundImage'] ) ) : '';
     $foreground = ! empty( $slide['foregroundImage'] ) ? sprintf( '<div class="ai-banner-slide__fg"><img src="%s" alt="" loading="lazy"></div>', esc_url( $slide['foregroundImage'] ) ) : '';
 
     $cta = ! empty( $slide['ctaText'] ) ? sprintf(
@@ -148,7 +147,7 @@ function ellipsis_interactive_banner_render_callback( $attributes, $content ) {
 
     $slides_markup .= sprintf(
       '<div class="ai-banner-slide layout-%6$s%7$s" data-index="%1$d">'
-        . '<div class="ai-banner-slide__bg"%2$s><span class="ai-banner-slide__overlay"></span></div>'
+        . '<div class="ai-banner-slide__bg"><span class="ai-banner-slide__overlay"></span></div>'
         . '<div class="ai-banner-slide__inner">'
           . '<div class="ai-banner-slide__content">'
             . '<h2 class="ai-banner-slide__title">%3$s</h2>'
@@ -161,7 +160,6 @@ function ellipsis_interactive_banner_render_callback( $attributes, $content ) {
         . '</div>'
       . '</div>',
       absint( $index ),
-      $background,
       wp_kses( $slide['title'], array( 'span' => array( 'class' => array() ) ) ),
       wp_kses_post( $slide['description'] ),
       $foreground,

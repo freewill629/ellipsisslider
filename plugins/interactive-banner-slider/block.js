@@ -145,21 +145,6 @@
                 MediaUploadCheck,
                 null,
                 createElement(MediaUpload, {
-                  onSelect: (media) => updateSlide(index, 'backgroundImage', media?.url || ''),
-                  allowedTypes: ['image'],
-                  value: slide.backgroundImage,
-                  render: ({ open }) =>
-                    createElement(
-                      Button,
-                      { onClick: open, isSecondary: true },
-                      slide.backgroundImage ? 'Change background' : 'Choose background'
-                    ),
-                })
-              ),
-              createElement(
-                MediaUploadCheck,
-                null,
-                createElement(MediaUpload, {
                   onSelect: (media) => updateSlide(index, 'foregroundImage', media?.url || ''),
                   allowedTypes: ['image'],
                   value: slide.foregroundImage,
@@ -197,7 +182,7 @@
                   className: `ai-banner-slide layout-${slide.layout || 'hero'} ${index === 0 ? 'is-active' : ''}`,
                   key: index,
                 },
-                createElement('div', { className: 'ai-banner-slide__bg', style: slide.backgroundImage ? { backgroundImage: `url(${slide.backgroundImage})` } : undefined }, createElement('span', { className: 'ai-banner-slide__overlay' })),
+                createElement('div', { className: 'ai-banner-slide__bg' }, createElement('span', { className: 'ai-banner-slide__overlay' })),
                 createElement(
                   'div',
                   { className: 'ai-banner-slide__inner' },
