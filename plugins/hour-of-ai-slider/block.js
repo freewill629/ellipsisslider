@@ -1,12 +1,12 @@
 (function (blocks, blockEditor, components, element) {
   const { registerBlockType } = blocks;
   const { InspectorControls, MediaUpload, MediaUploadCheck, RichText, URLInputButton, useBlockProps } = blockEditor;
-  const { PanelBody, TextControl, TextareaControl, Button, ColorPalette, RangeControl } = components;
+  const { PanelBody, TextControl, TextareaControl, Button, ColorPalette } = components;
   const { Fragment } = element;
 
   const DEFAULT_SLIDES = [
     {
-      title: 'The <span class="hour-ai-logo-text shimmer-text">Hour of AI</span> is here',
+      title: 'The <span class="hour-ai-logo-text">Hour of <span class="hour-ai-logo__ai">AI</span></span> is here',
       description: 'A global movement to make AI education accessible, engaging, and inspiring for every learner.',
       ctaLabel: 'Explore the Activity',
       ctaUrl: '#',
@@ -61,7 +61,6 @@
         accentFrom,
         accentMid,
         accentTo,
-        slideSpeed,
       } = attributes;
 
       const updateSlide = (index, key, value) => {
@@ -75,18 +74,17 @@
       const blockProps = useBlockProps({
         className: 'hour-ai-slider hour-ai-slider--preview',
         style: {
-          '--hour-ai-surface': backgroundColor || '#f6f7fb',
-          '--hour-ai-heading': headingColor || '#0f172a',
-          '--hour-ai-body': bodyColor || '#1f2a44',
-          '--hour-ai-button-bg': buttonBackground || '#4f46e5',
+          '--hour-ai-surface': backgroundColor || '#f5f3ff',
+          '--hour-ai-heading': headingColor || '#1c0a4d',
+          '--hour-ai-body': bodyColor || '#27185b',
+          '--hour-ai-button-bg': buttonBackground || '#2a0cff',
           '--hour-ai-button-text': buttonTextColor || '#ffffff',
-          '--hour-ai-dot': dotColor || '#cdd5f1',
-          '--hour-ai-dot-active': dotActiveColor || '#6b8bff',
-          '--hour-ai-accent-from': accentFrom || '#6c5ce7',
-          '--hour-ai-accent-mid': accentMid || '#4f46e5',
-          '--hour-ai-accent-to': accentTo || '#22d3ee',
+          '--hour-ai-dot': dotColor || '#c7c2e4',
+          '--hour-ai-dot-active': dotActiveColor || '#2a0cff',
+          '--hour-ai-accent-from': accentFrom || '#3a0c92',
+          '--hour-ai-accent-mid': accentMid || '#4c3cf1',
+          '--hour-ai-accent-to': accentTo || '#00e3ff',
         },
-        'data-speed': slideSpeed || 9000,
       });
 
       return element.createElement(
@@ -169,19 +167,6 @@
               })
             )
           ),
-          element.createElement(
-            PanelBody,
-            { title: 'Behavior', initialOpen: false },
-            element.createElement(RangeControl, {
-              label: 'Slide duration (ms)',
-              value: slideSpeed,
-              onChange: (value) => setAttributes({ slideSpeed: value || 9000 }),
-              min: 3000,
-              max: 20000,
-              step: 500,
-              help: 'Time each slide stays visible before advancing.',
-            })
-          ),
           slides.map((slide, index) =>
             element.createElement(
               PanelBody,
@@ -249,38 +234,28 @@
                   element.createElement(
                     'div',
                     { className: 'hour-ai-slide__copy' },
-                    element.createElement(RichText, {
-                      tagName: 'h2',
-                      className: 'hour-ai-slide__title',
-                      value: slide.title,
-                      allowedFormats: ['core/bold', 'core/italic', 'core/link'],
-                      onChange: (value) => updateSlide(index, 'title', value),
-                    }),
-                    element.createElement(RichText, {
-                      tagName: 'p',
-                      className: 'hour-ai-slide__description',
-                      value: slide.description,
-                      allowedFormats: ['core/bold', 'core/italic', 'core/link'],
-                      onChange: (value) => updateSlide(index, 'description', value),
-                    }),
-                    !!slide.ctaLabel &&
-                      element.createElement(
-                        'a',
-                        { className: 'hour-ai-button', href: slide.ctaUrl || '#' },
-                        slide.ctaLabel
-                      )
-                  ),
-                  slide.imageUrl &&
-                    element.createElement(
-                      'div',
-                      { className: 'hour-ai-slide__media' },
-                      element.createElement(
-                        'div',
-                        { className: 'hour-ai-slide__media-frame' },
-                        element.createElement('img', { src: slide.imageUrl, alt: '', className: 'hour-ai-slide__image' })
-                      )
-                    )
-                )
+                  element.createElement(RichText, {
+                    tagName: 'h2',
+                    className: 'hour-ai-slide__title',
+                    value: slide.title,
+                    allowedFormats: ['core/bold', 'core/italic', 'core/link'],
+                    onChange: (value) => updateSlide(index, 'title', value),
+                  }),
+                  element.createElement(RichText, {
+                    tagName: 'p',
+                    className: 'hour-ai-slide__description',
+                    value: slide.description,
+                    allowedFormats: ['core/bold', 'core/italic', 'core/link'],
+                    onChange: (value) => updateSlide(index, 'description', value),
+                  })
+                  )
+                ),
+                slide.imageUrl &&
+                  element.createElement(
+                    'div',
+                    { className: 'hour-ai-slide__media' },
+                    element.createElement('img', { src: slide.imageUrl, alt: '', className: 'hour-ai-slide__image' })
+                  )
               )
             )
           )
