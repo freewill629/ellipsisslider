@@ -15,7 +15,7 @@
       "type": "array",
       "default": [
         {
-          "title": "The <span class=\"hour-ai-logo-text shimmer-text\">Hour of AI</span> is here",
+          "title": "The <span class=\"hour-ai-logo-text\">Hour of <span class=\"hour-ai-logo__ai\">AI</span></span> is here",
           "description": "A global movement to make AI education accessible, engaging, and inspiring for every learner.",
           "ctaLabel": "Explore the Activity",
           "ctaUrl": "#",
@@ -61,19 +61,19 @@
     },
     "backgroundColor": {
       "type": "string",
-      "default": "#0b102b"
+      "default": "#f5f3ff"
     },
     "headingColor": {
       "type": "string",
-      "default": "#ffffff"
+      "default": "#1c0a4d"
     },
     "bodyColor": {
       "type": "string",
-      "default": "#e5e7eb"
+      "default": "#27185b"
     },
     "buttonBackground": {
       "type": "string",
-      "default": "#4f46e5"
+      "default": "#2a0cff"
     },
     "buttonTextColor": {
       "type": "string",
@@ -81,27 +81,23 @@
     },
     "dotColor": {
       "type": "string",
-      "default": "#cbd5e1"
+      "default": "#c7c2e4"
     },
     "dotActiveColor": {
       "type": "string",
-      "default": "#f59e0b"
+      "default": "#2a0cff"
     },
     "accentFrom": {
       "type": "string",
-      "default": "#9333ea"
+      "default": "#3a0c92"
     },
     "accentMid": {
       "type": "string",
-      "default": "#ec4899"
+      "default": "#4c3cf1"
     },
     "accentTo": {
       "type": "string",
-      "default": "#f59e0b"
-    },
-    "slideSpeed": {
-      "type": "number",
-      "default": 9000
+      "default": "#00e3ff"
     }
   },
   "editorScript": "file:./block.js",

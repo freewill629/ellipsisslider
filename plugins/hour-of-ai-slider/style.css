@@ -1,22 +1,20 @@
 .hour-ai-slider {
   position: relative;
   width: 100%;
-  max-width: none;
-  margin: 0;
-  border-radius: 28px;
+  max-width: 1200px;
+  margin: 2.5rem auto;
+  border-radius: 24px;
   overflow: hidden;
-  background: var(--hour-ai-surface, #0b102b);
-  color: var(--hour-ai-body, #e5e7eb);
+  background: var(--hour-ai-surface, #f5f3ff);
+  color: var(--hour-ai-body, #27185b);
+  box-shadow: 0 22px 60px rgba(16, 3, 57, 0.18);
   isolation: isolate;
-  height: 100vh;
-  min-height: 760px;
-  box-shadow: 0 35px 85px rgba(17, 24, 39, 0.25);
+  border: 1px solid rgba(39, 24, 91, 0.08);
 }
 
 .hour-ai-slider__track {
   position: relative;
-  height: 100%;
-  min-height: inherit;
+  min-height: 620px;
 }
 
 .hour-ai-slide {
@@ -24,7 +22,7 @@
   inset: 0;
   opacity: 0;
   transform: translateY(20px) scale(0.98);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition: opacity 0.7s ease, transform 0.7s ease;
   display: flex;
   align-items: stretch;
   justify-content: center;
@@ -37,14 +35,7 @@
 }
 
 .hour-ai-slide__bg {
-  display: block;
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  z-index: 0;
-  background: radial-gradient(circle at 20% 20%, rgba(79, 70, 229, 0.35), transparent 35%),
-    radial-gradient(circle at 80% 10%, rgba(34, 211, 238, 0.35), transparent 30%),
-    linear-gradient(135deg, #0b102b, #1e1b4b);
+  display: none;
 }
 
 .hour-ai-slide__image {
@@ -57,9 +48,8 @@
 .hour-ai-slide__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(145deg, rgba(10, 12, 32, 0.82), rgba(23, 16, 57, 0.72), rgba(9, 9, 26, 0.6));
+  background: linear-gradient(125deg, rgba(14, 19, 56, 0.78), rgba(14, 19, 56, 0.55), rgba(68, 40, 140, 0.35));
 }
-
 
 .hour-ai-slide__bg .hour-ai-slide__image {
   position: absolute;
@@ -69,68 +59,63 @@
   filter: saturate(1.05);
 }
 
+.hour-ai-slide__media .hour-ai-slide__image {
+  animation: none;
+}
+
 .hour-ai-slide__inner {
   position: relative;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
-  padding: clamp(2.5rem, 5vw, 4rem);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  align-items: center;
+  padding: clamp(2rem, 4vw, 3rem);
   width: 100%;
+  max-width: 1180px;
   height: 100%;
-  max-width: 1320px;
   margin: 0 auto;
   z-index: 2;
 }
 
 .hour-ai-slide.layout-center .hour-ai-slide__inner {
-  align-items: center;
-  justify-content: center;
+  grid-template-columns: 1fr;
+  justify-items: center;
 }
 
 .hour-ai-slide.layout-center .hour-ai-slide__copy {
   text-align: center;
-  align-items: center;
+  margin: 0 auto;
+}
+
+.hour-ai-slide.layout-center .hour-ai-slide__media {
+  margin: 0 auto;
 }
 
 .hour-ai-slide__copy {
-  max-width: 820px;
-  width: 100%;
-  text-align: left;
-  margin: 0;
-  padding: clamp(1.75rem, 4vw, 2.75rem);
-  background: linear-gradient(145deg, rgba(10, 12, 32, 0.85), rgba(26, 20, 65, 0.8));
-  border-radius: 22px;
-  box-shadow: 0 25px 55px rgba(5, 6, 19, 0.45);
-  backdrop-filter: blur(10px);
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  color: var(--hour-ai-body, #e5e7eb);
+  max-width: 680px;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .hour-ai-slide__title {
-  font-size: clamp(2.6rem, 3.5vw, 4.1rem);
-  line-height: 1.05;
-  font-weight: 900;
-  margin: 0 0 0.5rem;
-  color: var(--hour-ai-heading, #ffffff);
-  letter-spacing: -0.02em;
-  text-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
-  animation: fadeInUp 1s ease forwards;
+  font-size: clamp(2.4rem, 3.2vw, 3.5rem);
+  line-height: 1.1;
+  font-weight: 800;
+  margin: 0 0 1rem;
+  color: var(--hour-ai-heading, #1c0a4d);
 }
 
 .hour-ai-slide__description {
-  font-size: 1.2rem;
-  line-height: 1.75;
-  opacity: 0.96;
-  margin: 0;
-  color: var(--hour-ai-body, #e5e7eb);
-  animation: fadeInUp 1s ease 0.12s forwards;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  opacity: 0.95;
+  margin: 0 0 2rem;
+  color: var(--hour-ai-body, #27185b);
 }
 
 .hour-ai-button {
   display: inline-block;
-  background: linear-gradient(120deg, var(--hour-ai-button-bg, #4f46e5), var(--hour-ai-accent-mid, #ec4899), var(--hour-ai-accent-to, #f59e0b));
+  background: linear-gradient(120deg, var(--hour-ai-button-bg, #2a0cff), var(--hour-ai-accent-to, #00e3ff));
   color: var(--hour-ai-button-text, #ffffff);
   padding: 0.95rem 1.8rem;
   border-radius: 14px;
@@ -138,9 +123,7 @@
   letter-spacing: 0.01em;
   text-decoration: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
-  box-shadow: 0 16px 40px rgba(79, 70, 229, 0.35);
-  align-self: flex-start;
-  animation: fadeInUp 1s ease 0.24s forwards;
+  box-shadow: 0 12px 35px rgba(42, 12, 255, 0.25);
 }
 
 .hour-ai-button:hover {
@@ -153,12 +136,32 @@
   outline-offset: 2px;
 }
 
+.hour-ai-slide__media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 25px 55px rgba(16, 3, 57, 0.18);
+  padding: clamp(1.5rem, 3vw, 2rem);
+  min-height: 320px;
+}
+
 .hour-ai-slide__media img {
   border-radius: 18px;
   box-shadow: 0 18px 35px rgba(16, 3, 57, 0.18);
   object-fit: cover;
   max-height: 520px;
   width: auto;
+}
+
+.hour-ai-slide__media img {
+  border-radius: 18px;
+  box-shadow: 0 18px 35px rgba(16, 3, 57, 0.2);
+  object-fit: cover;
+  max-height: 460px;
 }
 
 .hour-ai-slider__dots {
@@ -170,9 +173,9 @@
   gap: 0.75rem;
   z-index: 6;
   padding: 0.65rem 0.95rem;
-  background: rgba(7, 6, 19, 0.6);
+  background: rgba(255, 255, 255, 0.7);
   border-radius: 999px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 10px 30px rgba(17, 24, 39, 0.18);
   backdrop-filter: blur(10px);
 }
 
@@ -180,7 +183,7 @@
   width: 12px;
   height: 12px;
   border-radius: 999px;
-  background: var(--hour-ai-dot, #cbd5e1);
+  background: var(--hour-ai-dot, #c7c2e4);
   border: none;
   cursor: pointer;
   transition: background 0.2s ease, transform 0.2s ease;
@@ -188,7 +191,7 @@
 }
 
 .hour-ai-slider__dot.is-active {
-  background: var(--hour-ai-dot-active, #f59e0b);
+  background: var(--hour-ai-dot-active, #2a0cff);
   transform: scale(1.05);
   opacity: 1;
 }
@@ -234,14 +237,6 @@
   animation: kenburns 20s ease-out infinite;
 }
 
-.fade-in-up {
-  animation: fadeInUp 1s ease forwards;
-}
-
-.fade-in-down {
-  animation: fadeInDown 1s ease forwards;
-}
-
 @keyframes hour-ai-glow {
   0% {
     background-position: 0% 50%;
@@ -263,28 +258,6 @@
   }
 }
 
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(22px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-18px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 @keyframes kenburns {
   0% {
     transform: scale(1.02);
@@ -297,25 +270,69 @@
   }
 }
 
+.hour-ai-logo-text {
+  color: var(--hour-ai-heading, #1c0a4d);
+}
+
+.hour-ai-logo__ai {
+  position: relative;
+  background: linear-gradient(120deg, var(--hour-ai-accent-from, #3a0c92), var(--hour-ai-accent-mid, #4c3cf1), var(--hour-ai-accent-to, #00e3ff));
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: hour-ai-glow 5s ease infinite;
+  padding-left: 0.25rem;
+  padding-right: 0.1rem;
+}
+
+.hour-ai-logo__ai::after {
+  content: '';
+  display: inline-block;
+  width: 14px;
+  height: 38px;
+  margin-left: 0.5rem;
+  background: linear-gradient(120deg, var(--hour-ai-accent-from, #3a0c92), var(--hour-ai-accent-to, #00e3ff));
+  border-radius: 10px;
+  vertical-align: middle;
+  box-shadow: 0 0 12px rgba(0, 227, 255, 0.4);
+}
+
+@keyframes hour-ai-glow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 @media (max-width: 782px) {
   .hour-ai-slider {
     margin: 0;
-    border-radius: 0;
-    min-height: 90vh;
+    border-radius: 22px;
+    padding: 1.75rem;
   }
 
   .hour-ai-slider__track {
-    min-height: inherit;
+    min-height: 760px;
   }
 
   .hour-ai-slide__inner {
-    padding: clamp(1.5rem, 5vw, 2.5rem);
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
   .hour-ai-slide__copy {
     text-align: center;
-    align-items: center;
-    padding: clamp(1.5rem, 5vw, 2.25rem);
+  }
+
+  .hour-ai-slide__media {
+    max-width: 420px;
+    margin: 0 auto;
   }
 }
 

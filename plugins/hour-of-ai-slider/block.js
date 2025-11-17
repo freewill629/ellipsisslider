@@ -1,12 +1,12 @@
 (function (blocks, blockEditor, components, element) {
   const { registerBlockType } = blocks;
   const { InspectorControls, MediaUpload, MediaUploadCheck, RichText, URLInputButton, useBlockProps } = blockEditor;
-  const { PanelBody, TextControl, TextareaControl, Button, ColorPalette, RangeControl } = components;
+  const { PanelBody, TextControl, TextareaControl, Button, ColorPalette } = components;
   const { Fragment } = element;
 
   const DEFAULT_SLIDES = [
     {
-      title: 'The <span class="hour-ai-logo-text shimmer-text">Hour of AI</span> is here',
+      title: 'The <span class="hour-ai-logo-text">Hour of <span class="hour-ai-logo__ai">AI</span></span> is here',
       description: 'A global movement to make AI education accessible, engaging, and inspiring for every learner.',
       ctaLabel: 'Explore the Activity',
       ctaUrl: '#',
@@ -61,7 +61,6 @@
         accentFrom,
         accentMid,
         accentTo,
-        slideSpeed,
       } = attributes;
 
       const updateSlide = (index, key, value) => {
@@ -75,18 +74,17 @@
       const blockProps = useBlockProps({
         className: 'hour-ai-slider hour-ai-slider--preview',
         style: {
-          '--hour-ai-surface': backgroundColor || '#0b102b',
-          '--hour-ai-heading': headingColor || '#ffffff',
-          '--hour-ai-body': bodyColor || '#e5e7eb',
-          '--hour-ai-button-bg': buttonBackground || '#4f46e5',
+          '--hour-ai-surface': backgroundColor || '#f5f3ff',
+          '--hour-ai-heading': headingColor || '#1c0a4d',
+          '--hour-ai-body': bodyColor || '#27185b',
+          '--hour-ai-button-bg': buttonBackground || '#2a0cff',
           '--hour-ai-button-text': buttonTextColor || '#ffffff',
-          '--hour-ai-dot': dotColor || '#cbd5e1',
-          '--hour-ai-dot-active': dotActiveColor || '#f59e0b',
-          '--hour-ai-accent-from': accentFrom || '#9333ea',
-          '--hour-ai-accent-mid': accentMid || '#ec4899',
-          '--hour-ai-accent-to': accentTo || '#f59e0b',
+          '--hour-ai-dot': dotColor || '#c7c2e4',
+          '--hour-ai-dot-active': dotActiveColor || '#2a0cff',
+          '--hour-ai-accent-from': accentFrom || '#3a0c92',
+          '--hour-ai-accent-mid': accentMid || '#4c3cf1',
+          '--hour-ai-accent-to': accentTo || '#00e3ff',
         },
-        'data-speed': slideSpeed || 9000,
       });
 
       return element.createElement(
@@ -168,19 +166,6 @@
                 onChange: updateColor('accentTo'),
               })
             )
-          ),
-          element.createElement(
-            PanelBody,
-            { title: 'Behavior', initialOpen: false },
-            element.createElement(RangeControl, {
-              label: 'Slide duration (ms)',
-              value: slideSpeed,
-              onChange: (value) => setAttributes({ slideSpeed: value || 9000 }),
-              min: 3000,
-              max: 20000,
-              step: 500,
-              help: 'Time each slide stays visible before advancing.',
-            })
           ),
           slides.map((slide, index) =>
             element.createElement(

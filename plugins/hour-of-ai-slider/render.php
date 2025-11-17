@@ -29,7 +29,7 @@ function hour_of_ai_slider_color_value( $value, $fallback ) {
 function hour_of_ai_slider_default_slides() {
   return array(
     array(
-      'title'       => __( 'The <span class="hour-ai-logo-text shimmer-text">Hour of AI</span> is here', 'hour-of-ai' ),
+      'title'       => __( 'The <span class="hour-ai-logo-text">Hour of <span class="hour-ai-logo__ai">AI</span></span> is here', 'hour-of-ai' ),
       'description' => __( 'A global movement to make AI education accessible, engaging, and inspiring for every learner.', 'hour-of-ai' ),
       'ctaLabel'    => __( 'Explore the Activity', 'hour-of-ai' ),
       'ctaUrl'      => '#',
@@ -73,22 +73,19 @@ function hour_of_ai_slider_default_slides() {
  */
 function hour_of_ai_slider_render_callback( $attributes, $content ) {
   $defaults = array(
-    'backgroundColor'  => '#0b102b',
-    'headingColor'     => '#ffffff',
-    'bodyColor'        => '#e5e7eb',
-    'buttonBackground' => '#4f46e5',
+    'backgroundColor'  => '#f5f3ff',
+    'headingColor'     => '#1c0a4d',
+    'bodyColor'        => '#27185b',
+    'buttonBackground' => '#2a0cff',
     'buttonTextColor'  => '#ffffff',
-    'dotColor'         => '#cbd5e1',
-    'dotActiveColor'   => '#f59e0b',
-    'accentFrom'       => '#9333ea',
-    'accentMid'        => '#ec4899',
-    'accentTo'         => '#f59e0b',
-    'slideSpeed'       => 9000,
+    'dotColor'         => '#c7c2e4',
+    'dotActiveColor'   => '#2a0cff',
+    'accentFrom'       => '#3a0c92',
+    'accentMid'        => '#4c3cf1',
+    'accentTo'         => '#00e3ff',
   );
 
   $design = wp_parse_args( $attributes, $defaults );
-  $speed  = isset( $design['slideSpeed'] ) ? absint( $design['slideSpeed'] ) : $defaults['slideSpeed'];
-  $speed  = $speed ? $speed : $defaults['slideSpeed'];
 
   $style = sprintf(
     '--hour-ai-surface:%1$s;--hour-ai-heading:%2$s;--hour-ai-body:%3$s;--hour-ai-button-bg:%4$s;--hour-ai-button-text:%5$s;--hour-ai-dot:%6$s;--hour-ai-dot-active:%7$s;--hour-ai-accent-from:%8$s;--hour-ai-accent-mid:%9$s;--hour-ai-accent-to:%10$s;',
@@ -108,7 +105,6 @@ function hour_of_ai_slider_render_callback( $attributes, $content ) {
     array(
       'class' => 'hour-ai-slider',
       'style' => $style,
-      'data-speed' => $speed,
     )
   );
 
@@ -152,8 +148,8 @@ function hour_of_ai_slider_render_callback( $attributes, $content ) {
       $image,
       wp_kses( $slide['title'], array( 'span' => array( 'class' => array(), 'style' => array() ), 'br' => array(), 'strong' => array(), 'em' => array() ) ),
       wp_kses_post( $slide['description'] ),
-      esc_attr( $layout_class ),
-      $cta
+      $cta,
+      esc_attr( $layout_class )
     );
 
     $nav_buttons .= sprintf( '<button class="hour-ai-slider__dot" data-target="%1$d" aria-label="Slide %2$d"></button>', absint( $index ), absint( $index ) + 1 );
