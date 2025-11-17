@@ -106,7 +106,7 @@
 }
 
 .ai-banner-slide__content {
-  align-self: end;
+  align-self: center;
   max-width: 640px;
 }
 
@@ -178,6 +178,15 @@
   height: auto;
   position: relative;
   z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+@media (min-width: 992px) {
+  .ai-banner-slide__fg {
+    justify-self: end;
+  }
 }
 
 @media (min-width: 992px) {
@@ -194,6 +203,7 @@
   object-fit: contain;
   border-radius: 16px;
   box-shadow: 0 15px 60px rgba(0, 0, 0, 0.35);
+  margin-left: auto;
 }
 
 .ai-banner-slide__footnote {
