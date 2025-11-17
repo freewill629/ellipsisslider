@@ -206,6 +206,12 @@
   margin-left: auto;
 }
 
+@media (max-width: 767px) {
+  .ai-banner-slide__fg img {
+    width: 100%;
+  }
+}
+
 .ai-banner-slide__footnote {
   margin-top: 1.2rem;
   font-size: 0.95rem;
@@ -277,6 +283,24 @@
 
 .ai-banner-slide.layout-cta .ai-banner-slide__description {
   margin-bottom: 1.75rem;
+}
+
+.ai-banner-slide:last-child .ai-banner-slide__inner {
+  grid-template-columns: 1fr;
+  justify-items: center;
+  text-align: center;
+}
+
+.ai-banner-slide:last-child .ai-banner-slide__content {
+  justify-self: center;
+}
+
+.ai-banner-slide:last-child .ai-banner-slide__fg {
+  justify-content: center;
+}
+
+.ai-banner-slide:last-child .ai-banner-slide__fg img {
+  margin: 0 auto;
 }
 
 /* Background overlays per layout */
