@@ -146,17 +146,17 @@ function ellipsis_interactive_banner_render_callback( $attributes, $content ) {
     $footnote = ! empty( $slide['footnote'] ) ? '<p class="ai-banner-slide__footnote">' . wp_kses_post( $slide['footnote'] ) . '</p>' : '';
 
     $slides_markup .= sprintf(
-      '<div class="ai-banner-slide layout-%6$s%7$s" data-index="%1$d">'
+      '<div class="ai-banner-slide layout-%5$s%6$s" data-index="%1$d">'
         . '<div class="ai-banner-slide__bg"><span class="ai-banner-slide__overlay"></span></div>'
         . '<div class="ai-banner-slide__inner">'
           . '<div class="ai-banner-slide__content">'
-            . '<h2 class="ai-banner-slide__title">%3$s</h2>'
-            . '<p class="ai-banner-slide__description">%4$s</p>'
+            . '<h2 class="ai-banner-slide__title">%2$s</h2>'
+            . '<p class="ai-banner-slide__description">%3$s</p>'
+            . '%7$s'
             . '%8$s'
             . '%9$s'
-            . '%10$s'
           . '</div>'
-          . '%5$s'
+          . '%4$s'
         . '</div>'
       . '</div>',
       absint( $index ),
