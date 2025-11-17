@@ -3,7 +3,8 @@
  * Plugin Name: Hour of AI Hero Slider Block
  * Description: Adds a Gutenberg block for the Hour of AI hero slider with EllipsisEducation branding.
  * Version: 1.0.0
- * Author: OpenAI
+ * Author: Maxlead
+ * Author URI: https://maxlead.in
  * License: GPL-2.0-or-later
  */
 
