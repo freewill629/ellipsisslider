@@ -4,7 +4,21 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-  exit;
+ exit;
+}
+
+/**
+ * Safely return a color value with fallback.
+ *
+ * @param string $value    User provided color.
+ * @param string $fallback Default color.
+ *
+ * @return string
+ */
+function hour_of_ai_slider_color_value( $value, $fallback ) {
+  $sanitized = sanitize_text_field( $value );
+
+  return $sanitized ? $sanitized : $fallback;
 }
 
 /**
@@ -58,7 +72,41 @@ function hour_of_ai_slider_default_slides() {
  * @return string
  */
 function hour_of_ai_slider_render_callback( $attributes, $content ) {
-  $wrapper_attributes = get_block_wrapper_attributes( array( 'class' => 'hour-ai-slider' ) );
+  $defaults = array(
+    'backgroundColor'  => '#f5f3ff',
+    'headingColor'     => '#1c0a4d',
+    'bodyColor'        => '#27185b',
+    'buttonBackground' => '#2a0cff',
+    'buttonTextColor'  => '#ffffff',
+    'dotColor'         => '#c7c2e4',
+    'dotActiveColor'   => '#2a0cff',
+    'accentFrom'       => '#3a0c92',
+    'accentMid'        => '#4c3cf1',
+    'accentTo'         => '#00e3ff',
+  );
+
+  $design = wp_parse_args( $attributes, $defaults );
+
+  $style = sprintf(
+    '--hour-ai-surface:%1$s;--hour-ai-heading:%2$s;--hour-ai-body:%3$s;--hour-ai-button-bg:%4$s;--hour-ai-button-text:%5$s;--hour-ai-dot:%6$s;--hour-ai-dot-active:%7$s;--hour-ai-accent-from:%8$s;--hour-ai-accent-mid:%9$s;--hour-ai-accent-to:%10$s;',
+    esc_attr( hour_of_ai_slider_color_value( $design['backgroundColor'], $defaults['backgroundColor'] ) ),
+    esc_attr( hour_of_ai_slider_color_value( $design['headingColor'], $defaults['headingColor'] ) ),
+    esc_attr( hour_of_ai_slider_color_value( $design['bodyColor'], $defaults['bodyColor'] ) ),
+    esc_attr( hour_of_ai_slider_color_value( $design['buttonBackground'], $defaults['buttonBackground'] ) ),
+    esc_attr( hour_of_ai_slider_color_value( $design['buttonTextColor'], $defaults['buttonTextColor'] ) ),
+    esc_attr( hour_of_ai_slider_color_value( $design['dotColor'], $defaults['dotColor'] ) ),
+    esc_attr( hour_of_ai_slider_color_value( $design['dotActiveColor'], $defaults['dotActiveColor'] ) ),
+    esc_attr( hour_of_ai_slider_color_value( $design['accentFrom'], $defaults['accentFrom'] ) ),
+    esc_attr( hour_of_ai_slider_color_value( $design['accentMid'], $defaults['accentMid'] ) ),
+    esc_attr( hour_of_ai_slider_color_value( $design['accentTo'], $defaults['accentTo'] ) )
+  );
+
+  $wrapper_attributes = get_block_wrapper_attributes(
+    array(
+      'class' => 'hour-ai-slider',
+      'style' => $style,
+    )
+  );
 
   $slides = isset( $attributes['slides'] ) && is_array( $attributes['slides'] ) ? $attributes['slides'] : array();
 
@@ -80,7 +128,7 @@ function hour_of_ai_slider_render_callback( $attributes, $content ) {
     $cta = ! empty( $slide['ctaLabel'] ) ? sprintf(
       '<a class="hour-ai-button" href="%1$s">%2$s</a>',
       esc_url( $slide['ctaUrl'] ),
-      esc_html( $slide['ctaLabel'] )
+      wp_kses_post( $slide['ctaLabel'] )
     ) : '';
 
     $layout_class = 'layout-' . ( ! empty( $slide['layout'] ) ? sanitize_html_class( $slide['layout'] ) : 'image-left' );
@@ -99,8 +147,8 @@ function hour_of_ai_slider_render_callback( $attributes, $content ) {
       . '</div>',
       absint( $index ),
       $image,
-      esc_html( $slide['title'] ),
-      esc_html( $slide['description'] ),
+      wp_kses( $slide['title'], array( 'span' => array( 'class' => array(), 'style' => array() ), 'br' => array(), 'strong' => array(), 'em' => array() ) ),
+      wp_kses_post( $slide['description'] ),
       $cta,
       esc_attr( $layout_class )
     );
