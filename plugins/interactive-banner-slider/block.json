@@ -1,0 +1,90 @@
+{
+  "apiVersion": 2,
+  "name": "ellipsisslider/interactive-banner",
+  "title": "Interactive Banner Slider",
+  "category": "widgets",
+  "icon": "slides",
+  "description": "A Gutenberg slider block featuring an animated, multi-slide hero banner.",
+  "supports": {
+    "align": ["wide", "full"],
+    "anchor": true,
+    "html": false
+  },
+  "attributes": {
+    "slides": {
+      "type": "array",
+      "default": [
+        {
+          "title": "The <span class=\"ai-gradient-text\">Hour of AI</span> is here.",
+          "description": "A global movement to make AI education accessible, engaging, and inspiring for every learner.",
+          "ctaText": "Explore the Activity",
+          "ctaUrl": "https://ellipsisedu.com/en/hourofai-artificialneuron",
+          "foregroundImage": "",
+          "layout": "hero",
+          "bullets": [],
+          "footnote": ""
+        },
+        {
+          "title": "Meet the Artificial Neuron",
+          "description": "This lesson introduces the building blocks of AI through a fun \u201cbeach decision\u201d model.",
+          "ctaText": "Explore the Activity",
+          "ctaUrl": "https://ellipsisedu.com/en/hourofai-artificialneuron",
+          "foregroundImage": "https://placehold.co/650x900/3730a3/ffffff?text=Portrait+Image",
+          "layout": "split",
+          "bullets": [],
+          "footnote": ""
+        },
+        {
+          "title": "What Students Will Learn",
+          "description": "Key takeaways that cover neurons, inputs, weights, bias, and experimentation.",
+          "ctaText": "Access the Activity",
+          "ctaUrl": "https://ellipsisedu.com/en/hourofai-artificialneuron",
+          "foregroundImage": "https://placehold.co/650x900/4c1d95/ffffff?text=Portrait+Image",
+          "layout": "list",
+          "bullets": [
+            "Understand what an artificial neuron is and how it makes decisions.",
+            "Explore how inputs, weights, and bias influence outcomes.",
+            "Predict and test how changing weights affects a neuron's decision.",
+            "Experiment in an online simulation to see AI decision-making in action."
+          ],
+          "footnote": ""
+        },
+        {
+          "title": "Start Your Hour of AI",
+          "description": "Bring the building blocks of artificial intelligence to your students with this free, one-hour activity.",
+          "ctaText": "Access the Activity Now",
+          "ctaUrl": "https://ellipsisedu.com/en/hourofai-artificialneuron",
+          "foregroundImage": "",
+          "layout": "cta",
+          "bullets": [],
+          "footnote": "The Hour of AI is a global campaign from @CSforALL, in collaboration with Code.org."
+        }
+      ],
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": { "type": "string" },
+          "description": { "type": "string" },
+          "ctaText": { "type": "string" },
+          "ctaUrl": { "type": "string" },
+          "foregroundImage": { "type": "string" },
+          "layout": { "type": "string" },
+          "bullets": { "type": "array", "items": { "type": "string" } },
+          "footnote": { "type": "string" }
+        }
+      }
+    },
+    "autoplay": {
+      "type": "boolean",
+      "default": true
+    },
+    "interval": {
+      "type": "number",
+      "default": 7000
+    }
+  },
+  "editorScript": "file:./block.js",
+  "editorStyle": "file:./editor.css",
+  "style": "file:./style.css",
+  "viewScript": "file:./view.js"
+}

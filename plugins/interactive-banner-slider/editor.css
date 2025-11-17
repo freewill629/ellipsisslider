@@ -1,0 +1,19 @@
+.ai-banner-slider.ai-banner-slider--editor {
+  box-shadow: none;
+  margin: 0;
+  max-width: 100%;
+  background: linear-gradient(135deg, #0a0f25, #0d1838);
+}
+
+.ai-banner-slider--editor .ai-banner-slide__inner {
+  min-height: 260px;
+}
+
+.ai-banner-slider--editor .ai-banner-slide__title,
+.ai-banner-slider--editor .ai-banner-slide__description {
+  color: #e5e7eb;
+}
+
+.ai-banner-slider--editor .ai-banner-slide__dots {
+  display: none;
+}
