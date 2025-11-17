@@ -3,7 +3,7 @@
  * Plugin Name: Interactive Banner Slider Block
  * Description: Adds a Gutenberg block for a multi-slide banner slider inspired by the Hour of AI design.
  * Version: 1.0.0
- * Author: Ellipsis Education
+ * Author: Maxlead
  * License: GPL-2.0-or-later
  */
 
