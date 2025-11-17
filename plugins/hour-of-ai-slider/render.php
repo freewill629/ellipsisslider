@@ -123,7 +123,7 @@ function hour_of_ai_slider_render_callback( $attributes, $content ) {
 
   foreach ( $merged_slides as $index => $slide ) {
     $has_image = ! empty( $slide['imageUrl'] );
-    $image     = $has_image ? sprintf( '<img src="%s" alt="" class="hour-ai-slide__image" loading="lazy" />', esc_url( $slide['imageUrl'] ) ) : '';
+    $image     = $has_image ? sprintf( '<img src="%s" alt="" class="hour-ai-slide__image ken-burns" loading="lazy" />', esc_url( $slide['imageUrl'] ) ) : '';
 
     $cta = ! empty( $slide['ctaLabel'] ) ? sprintf(
       '<a class="hour-ai-button" href="%1$s">%2$s</a>',
@@ -134,15 +134,14 @@ function hour_of_ai_slider_render_callback( $attributes, $content ) {
     $layout_class = 'layout-' . ( ! empty( $slide['layout'] ) ? sanitize_html_class( $slide['layout'] ) : 'image-left' );
 
     $slides_markup .= sprintf(
-      '<div class="hour-ai-slide %6$s" data-index="%1$d">'
+      '<div class="hour-ai-slide %5$s" data-index="%1$d">'
         . '<div class="hour-ai-slide__bg">%2$s<div class="hour-ai-slide__overlay"></div></div>'
         . '<div class="hour-ai-slide__inner">'
           . '<div class="hour-ai-slide__copy">'
-            . '<h2 class="hour-ai-slide__title">%3$s</h2>'
+            . '<h1 class="hour-ai-slide__title">%3$s</h1>'
             . '<p class="hour-ai-slide__description">%4$s</p>'
-            . '%5$s'
+            . '%6$s'
           . '</div>'
-          . '<div class="hour-ai-slide__media">%2$s</div>'
         . '</div>'
       . '</div>',
       absint( $index ),
