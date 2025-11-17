@@ -1,6 +1,8 @@
 .hour-ai-slider--preview {
-  background: #0a1744;
+  background: var(--hour-ai-surface, #f5f3ff);
   min-height: 520px;
+  height: auto;
+  border-radius: 18px;
 }
 
 .hour-ai-slider--preview .hour-ai-slide__track,
@@ -13,7 +15,7 @@
   opacity: 1;
   transform: none;
   margin-bottom: 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(16, 3, 57, 0.08);
 }
 
 .hour-ai-slider--preview .hour-ai-slider__dots {
@@ -24,5 +26,5 @@
 }
 
 .hour-ai-slider--preview .hour-ai-slider__dot {
-  background: rgba(255, 255, 255, 0.3);
+  background: var(--hour-ai-dot, #c7c2e4);
 }

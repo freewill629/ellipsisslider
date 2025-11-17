@@ -1,12 +1,12 @@
 (function (blocks, blockEditor, components, element) {
   const { registerBlockType } = blocks;
   const { InspectorControls, MediaUpload, MediaUploadCheck, RichText, URLInputButton, useBlockProps } = blockEditor;
-  const { PanelBody, TextControl, TextareaControl, Button } = components;
+  const { PanelBody, TextControl, TextareaControl, Button, ColorPalette, RangeControl } = components;
   const { Fragment } = element;
 
   const DEFAULT_SLIDES = [
     {
-      title: 'The Hour of AI is here',
+      title: 'The <span class="hour-ai-logo-text shimmer-text">Hour of AI</span> is here',
       description: 'A global movement to make AI education accessible, engaging, and inspiring for every learner.',
       ctaLabel: 'Explore the Activity',
       ctaUrl: '#',
@@ -50,13 +50,44 @@
       const { attributes, setAttributes } = props;
       const slides = ensureSlides(attributes.slides);
 
+      const {
+        backgroundColor,
+        headingColor,
+        bodyColor,
+        buttonBackground,
+        buttonTextColor,
+        dotColor,
+        dotActiveColor,
+        accentFrom,
+        accentMid,
+        accentTo,
+        slideSpeed,
+      } = attributes;
+
       const updateSlide = (index, key, value) => {
         const updated = ensureSlides(attributes.slides);
         updated[index] = { ...updated[index], [key]: value };
         setAttributes({ slides: updated });
       };
 
-      const blockProps = useBlockProps({ className: 'hour-ai-slider hour-ai-slider--preview' });
+      const updateColor = (key) => (value) => setAttributes({ [key]: value });
+
+      const blockProps = useBlockProps({
+        className: 'hour-ai-slider hour-ai-slider--preview',
+        style: {
+          '--hour-ai-surface': backgroundColor || '#f5f3ff',
+          '--hour-ai-heading': headingColor || '#1c0a4d',
+          '--hour-ai-body': bodyColor || '#27185b',
+          '--hour-ai-button-bg': buttonBackground || '#2a0cff',
+          '--hour-ai-button-text': buttonTextColor || '#ffffff',
+          '--hour-ai-dot': dotColor || '#c7c2e4',
+          '--hour-ai-dot-active': dotActiveColor || '#2a0cff',
+          '--hour-ai-accent-from': accentFrom || '#3a0c92',
+          '--hour-ai-accent-mid': accentMid || '#4c3cf1',
+          '--hour-ai-accent-to': accentTo || '#00e3ff',
+        },
+        'data-speed': slideSpeed || 9000,
+      });
 
       return element.createElement(
         Fragment,
@@ -64,6 +95,93 @@
         element.createElement(
           InspectorControls,
           null,
+          element.createElement(
+            PanelBody,
+            { title: 'Design', initialOpen: true },
+            element.createElement('div', { className: 'hour-ai-color-control' },
+              element.createElement('p', null, 'Background'),
+              element.createElement(ColorPalette, {
+                value: backgroundColor,
+                onChange: updateColor('backgroundColor'),
+              })
+            ),
+            element.createElement('div', { className: 'hour-ai-color-control' },
+              element.createElement('p', null, 'Heading'),
+              element.createElement(ColorPalette, {
+                value: headingColor,
+                onChange: updateColor('headingColor'),
+              })
+            ),
+            element.createElement('div', { className: 'hour-ai-color-control' },
+              element.createElement('p', null, 'Body text'),
+              element.createElement(ColorPalette, {
+                value: bodyColor,
+                onChange: updateColor('bodyColor'),
+              })
+            ),
+            element.createElement('div', { className: 'hour-ai-color-control' },
+              element.createElement('p', null, 'Button background'),
+              element.createElement(ColorPalette, {
+                value: buttonBackground,
+                onChange: updateColor('buttonBackground'),
+              })
+            ),
+            element.createElement('div', { className: 'hour-ai-color-control' },
+              element.createElement('p', null, 'Button text'),
+              element.createElement(ColorPalette, {
+                value: buttonTextColor,
+                onChange: updateColor('buttonTextColor'),
+              })
+            ),
+            element.createElement('div', { className: 'hour-ai-color-control' },
+              element.createElement('p', null, 'Dot (inactive)'),
+              element.createElement(ColorPalette, {
+                value: dotColor,
+                onChange: updateColor('dotColor'),
+              })
+            ),
+            element.createElement('div', { className: 'hour-ai-color-control' },
+              element.createElement('p', null, 'Dot (active)'),
+              element.createElement(ColorPalette, {
+                value: dotActiveColor,
+                onChange: updateColor('dotActiveColor'),
+              })
+            ),
+            element.createElement('div', { className: 'hour-ai-color-control' },
+              element.createElement('p', null, 'Logo gradient from'),
+              element.createElement(ColorPalette, {
+                value: accentFrom,
+                onChange: updateColor('accentFrom'),
+              })
+            ),
+            element.createElement('div', { className: 'hour-ai-color-control' },
+              element.createElement('p', null, 'Logo gradient mid'),
+              element.createElement(ColorPalette, {
+                value: accentMid,
+                onChange: updateColor('accentMid'),
+              })
+            ),
+            element.createElement('div', { className: 'hour-ai-color-control' },
+              element.createElement('p', null, 'Logo gradient to'),
+              element.createElement(ColorPalette, {
+                value: accentTo,
+                onChange: updateColor('accentTo'),
+              })
+            )
+          ),
+          element.createElement(
+            PanelBody,
+            { title: 'Behavior', initialOpen: false },
+            element.createElement(RangeControl, {
+              label: 'Slide duration (ms)',
+              value: slideSpeed,
+              onChange: (value) => setAttributes({ slideSpeed: value || 9000 }),
+              min: 3000,
+              max: 20000,
+              step: 500,
+              help: 'Time each slide stays visible before advancing.',
+            })
+          ),
           slides.map((slide, index) =>
             element.createElement(
               PanelBody,
@@ -131,18 +249,20 @@
                   element.createElement(
                     'div',
                     { className: 'hour-ai-slide__copy' },
-                    element.createElement(RichText, {
-                      tagName: 'h2',
-                      className: 'hour-ai-slide__title',
-                      value: slide.title,
-                      onChange: (value) => updateSlide(index, 'title', value),
-                    }),
-                    element.createElement(RichText, {
-                      tagName: 'p',
-                      className: 'hour-ai-slide__description',
-                      value: slide.description,
-                      onChange: (value) => updateSlide(index, 'description', value),
-                    })
+                  element.createElement(RichText, {
+                    tagName: 'h2',
+                    className: 'hour-ai-slide__title',
+                    value: slide.title,
+                    allowedFormats: ['core/bold', 'core/italic', 'core/link'],
+                    onChange: (value) => updateSlide(index, 'title', value),
+                  }),
+                  element.createElement(RichText, {
+                    tagName: 'p',
+                    className: 'hour-ai-slide__description',
+                    value: slide.description,
+                    allowedFormats: ['core/bold', 'core/italic', 'core/link'],
+                    onChange: (value) => updateSlide(index, 'description', value),
+                  })
                   )
                 ),
                 slide.imageUrl &&
