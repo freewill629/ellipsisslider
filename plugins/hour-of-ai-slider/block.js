@@ -1,7 +1,7 @@
 (function (blocks, blockEditor, components, element) {
   const { registerBlockType } = blocks;
   const { InspectorControls, MediaUpload, MediaUploadCheck, RichText, URLInputButton, useBlockProps } = blockEditor;
-  const { PanelBody, TextControl, TextareaControl, Button, ColorPalette, RangeControl } = components;
+  const { PanelBody, TextControl, TextareaControl, Button, ColorPalette } = components;
   const { Fragment } = element;
 
   const DEFAULT_SLIDES = [
@@ -61,7 +61,6 @@
         accentFrom,
         accentMid,
         accentTo,
-        slideSpeed,
       } = attributes;
 
       const updateSlide = (index, key, value) => {
@@ -86,7 +85,6 @@
           '--hour-ai-accent-mid': accentMid || '#4c3cf1',
           '--hour-ai-accent-to': accentTo || '#00e3ff',
         },
-        'data-speed': slideSpeed || 9000,
       });
 
       return element.createElement(
@@ -168,19 +166,6 @@
                 onChange: updateColor('accentTo'),
               })
             )
-          ),
-          element.createElement(
-            PanelBody,
-            { title: 'Behavior', initialOpen: false },
-            element.createElement(RangeControl, {
-              label: 'Slide duration (ms)',
-              value: slideSpeed,
-              onChange: (value) => setAttributes({ slideSpeed: value || 9000 }),
-              min: 3000,
-              max: 20000,
-              step: 500,
-              help: 'Time each slide stays visible before advancing.',
-            })
           ),
           slides.map((slide, index) =>
             element.createElement(

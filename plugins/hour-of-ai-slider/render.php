@@ -83,12 +83,9 @@ function hour_of_ai_slider_render_callback( $attributes, $content ) {
     'accentFrom'       => '#3a0c92',
     'accentMid'        => '#4c3cf1',
     'accentTo'         => '#00e3ff',
-    'slideSpeed'       => 9000,
   );
 
   $design = wp_parse_args( $attributes, $defaults );
-  $speed  = isset( $design['slideSpeed'] ) ? absint( $design['slideSpeed'] ) : $defaults['slideSpeed'];
-  $speed  = $speed ? $speed : $defaults['slideSpeed'];
 
   $style = sprintf(
     '--hour-ai-surface:%1$s;--hour-ai-heading:%2$s;--hour-ai-body:%3$s;--hour-ai-button-bg:%4$s;--hour-ai-button-text:%5$s;--hour-ai-dot:%6$s;--hour-ai-dot-active:%7$s;--hour-ai-accent-from:%8$s;--hour-ai-accent-mid:%9$s;--hour-ai-accent-to:%10$s;',
@@ -108,7 +105,6 @@ function hour_of_ai_slider_render_callback( $attributes, $content ) {
     array(
       'class' => 'hour-ai-slider',
       'style' => $style,
-      'data-speed' => $speed,
     )
   );
 
