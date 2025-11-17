@@ -29,7 +29,7 @@ function hour_of_ai_slider_color_value( $value, $fallback ) {
 function hour_of_ai_slider_default_slides() {
   return array(
     array(
-      'title'       => __( 'The Hour of AI is here', 'hour-of-ai' ),
+      'title'       => __( 'The <span class="hour-ai-logo-text">Hour of <span class="hour-ai-logo__ai">AI</span></span> is here', 'hour-of-ai' ),
       'description' => __( 'A global movement to make AI education accessible, engaging, and inspiring for every learner.', 'hour-of-ai' ),
       'ctaLabel'    => __( 'Explore the Activity', 'hour-of-ai' ),
       'ctaUrl'      => '#',
