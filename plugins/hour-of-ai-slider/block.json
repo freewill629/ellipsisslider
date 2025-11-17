@@ -15,7 +15,7 @@
       "type": "array",
       "default": [
         {
-          "title": "The <span class=\"hour-ai-logo-text shimmer-text\">Hour of AI</span> is here",
+          "title": "The <span class=\"hour-ai-logo-text\">Hour of <span class=\"hour-ai-logo__ai\">AI</span></span> is here",
           "description": "A global movement to make AI education accessible, engaging, and inspiring for every learner.",
           "ctaLabel": "Explore the Activity",
           "ctaUrl": "#",
@@ -98,10 +98,6 @@
     "accentTo": {
       "type": "string",
       "default": "#00e3ff"
-    },
-    "slideSpeed": {
-      "type": "number",
-      "default": 9000
     }
   },
   "editorScript": "file:./block.js",
