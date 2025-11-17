@@ -34,7 +34,7 @@ function hour_of_ai_slider_default_slides() {
       'ctaLabel'    => __( 'Explore the Activity', 'hour-of-ai' ),
       'ctaUrl'      => '#',
       'imageUrl'    => '',
-      'layout'      => 'image-left',
+      'layout'      => 'image-right',
     ),
     array(
       'title'       => __( 'Meet the Artificial Neuron', 'hour-of-ai' ),
@@ -42,7 +42,7 @@ function hour_of_ai_slider_default_slides() {
       'ctaLabel'    => __( 'Explore the Activity', 'hour-of-ai' ),
       'ctaUrl'      => '#',
       'imageUrl'    => '',
-      'layout'      => 'two-column',
+      'layout'      => 'image-right',
     ),
     array(
       'title'       => __( 'What Students Will Learn', 'hour-of-ai' ),
@@ -50,7 +50,7 @@ function hour_of_ai_slider_default_slides() {
       'ctaLabel'    => __( 'Access the Activity', 'hour-of-ai' ),
       'ctaUrl'      => '#',
       'imageUrl'    => '',
-      'layout'      => 'two-column',
+      'layout'      => 'image-right',
     ),
     array(
       'title'       => __( 'Start Your Hour of AI', 'hour-of-ai' ),
@@ -131,7 +131,14 @@ function hour_of_ai_slider_render_callback( $attributes, $content ) {
       wp_kses_post( $slide['ctaLabel'] )
     ) : '';
 
-    $layout_class = 'layout-' . ( ! empty( $slide['layout'] ) ? sanitize_html_class( $slide['layout'] ) : 'image-left' );
+    $layout_class = 'layout-' . ( ! empty( $slide['layout'] ) ? sanitize_html_class( $slide['layout'] ) : 'image-right' );
+
+    $media = $has_image ? sprintf(
+      '<div class="hour-ai-slide__media">'
+        . '<div class="hour-ai-slide__media-frame">%1$s</div>'
+      . '</div>',
+      $image
+    ) : '';
 
     $slides_markup .= sprintf(
       '<div class="hour-ai-slide %5$s" data-index="%1$d">'

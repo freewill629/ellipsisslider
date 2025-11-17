@@ -20,7 +20,7 @@
           "ctaLabel": "Explore the Activity",
           "ctaUrl": "#",
           "imageUrl": "",
-          "layout": "image-left"
+          "layout": "image-right"
         },
         {
           "title": "Meet the Artificial Neuron",
@@ -28,7 +28,7 @@
           "ctaLabel": "Explore the Activity",
           "ctaUrl": "#",
           "imageUrl": "",
-          "layout": "two-column"
+          "layout": "image-right"
         },
         {
           "title": "What Students Will Learn",
@@ -36,7 +36,7 @@
           "ctaLabel": "Access the Activity",
           "ctaUrl": "#",
           "imageUrl": "",
-          "layout": "two-column"
+          "layout": "image-right"
         },
         {
           "title": "Start Your Hour of AI",

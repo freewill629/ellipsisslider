@@ -11,7 +11,7 @@
       ctaLabel: 'Explore the Activity',
       ctaUrl: '#',
       imageUrl: '',
-      layout: 'image-left',
+      layout: 'image-right',
     },
     {
       title: 'Meet the Artificial Neuron',
@@ -19,7 +19,7 @@
       ctaLabel: 'Explore the Activity',
       ctaUrl: '#',
       imageUrl: '',
-      layout: 'two-column',
+      layout: 'image-right',
     },
     {
       title: 'What Students Will Learn',
@@ -27,7 +27,7 @@
       ctaLabel: 'Access the Activity',
       ctaUrl: '#',
       imageUrl: '',
-      layout: 'two-column',
+      layout: 'image-right',
     },
     {
       title: 'Start Your Hour of AI',
@@ -208,9 +208,9 @@
               ),
               element.createElement(TextControl, {
                 label: 'Layout',
-                help: 'image-left, two-column, or center',
+                help: 'Use image-right (default), image-left, or center',
                 value: slide.layout,
-                onChange: (value) => updateSlide(index, 'layout', value || 'image-left'),
+                onChange: (value) => updateSlide(index, 'layout', value || 'image-right'),
               })
             )
           )
@@ -225,7 +225,7 @@
               element.createElement(
                 'div',
                 {
-                  className: `hour-ai-slide ${index === 0 ? 'is-active' : ''} layout-${slide.layout || 'image-left'}`,
+                  className: `hour-ai-slide ${index === 0 ? 'is-active' : ''} layout-${slide.layout || 'image-right'}`,
                   key: index,
                 },
                 element.createElement(
