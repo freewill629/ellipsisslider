@@ -48,7 +48,19 @@
 .hour-ai-slide__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(110deg, rgba(10, 23, 68, 0.92), rgba(10, 23, 68, 0.75), rgba(106, 77, 243, 0.45));
+  background: linear-gradient(125deg, rgba(14, 19, 56, 0.78), rgba(14, 19, 56, 0.55), rgba(68, 40, 140, 0.35));
+}
+
+.hour-ai-slide__bg .hour-ai-slide__image {
+  position: absolute;
+  inset: 0;
+  animation: kenburns 20s ease-out infinite;
+  transform-origin: center;
+  filter: saturate(1.05);
+}
+
+.hour-ai-slide__media .hour-ai-slide__image {
+  animation: none;
 }
 
 .hour-ai-slide__inner {
@@ -59,6 +71,9 @@
   align-items: center;
   padding: clamp(2rem, 4vw, 3rem);
   width: 100%;
+  max-width: 1180px;
+  height: 100%;
+  margin: 0 auto;
   z-index: 2;
 }
 
@@ -157,6 +172,11 @@
   display: flex;
   gap: 0.75rem;
   z-index: 6;
+  padding: 0.65rem 0.95rem;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 999px;
+  box-shadow: 0 10px 30px rgba(17, 24, 39, 0.18);
+  backdrop-filter: blur(10px);
 }
 
 .hour-ai-slider__dot {
@@ -167,11 +187,87 @@
   border: none;
   cursor: pointer;
   transition: background 0.2s ease, transform 0.2s ease;
+  opacity: 0.6;
 }
 
 .hour-ai-slider__dot.is-active {
   background: var(--hour-ai-dot-active, #2a0cff);
   transform: scale(1.05);
+  opacity: 1;
+}
+
+.hour-ai-logo-text {
+  color: var(--hour-ai-heading, #1c0a4d);
+}
+
+.hour-ai-logo__ai {
+  position: relative;
+  background: linear-gradient(120deg, var(--hour-ai-accent-from, #3a0c92), var(--hour-ai-accent-mid, #4c3cf1), var(--hour-ai-accent-to, #00e3ff));
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: hour-ai-glow 5s ease infinite;
+  padding-left: 0.25rem;
+  padding-right: 0.1rem;
+}
+
+.shimmer-text {
+  background: linear-gradient(to right, #9333ea 20%, #ec4899 40%, #f59e0b 60%, #22d3ee 80%);
+  background-size: 200% auto;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+.hour-ai-logo__ai::after {
+  content: '';
+  display: inline-block;
+  width: 14px;
+  height: 38px;
+  margin-left: 0.5rem;
+  background: linear-gradient(120deg, var(--hour-ai-accent-from, #3a0c92), var(--hour-ai-accent-to, #00e3ff));
+  border-radius: 10px;
+  vertical-align: middle;
+  box-shadow: 0 0 12px rgba(0, 227, 255, 0.4);
+}
+
+.ken-burns {
+  animation: kenburns 20s ease-out infinite;
+}
+
+@keyframes hour-ai-glow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes kenburns {
+  0% {
+    transform: scale(1.02);
+  }
+  50% {
+    transform: scale(1.07);
+  }
+  100% {
+    transform: scale(1.02);
+  }
 }
 
 .hour-ai-logo-text {
