@@ -98,10 +98,6 @@
     "accentTo": {
       "type": "string",
       "default": "#00e3ff"
-    },
-    "slideSpeed": {
-      "type": "number",
-      "default": 9000
     }
   },
   "editorScript": "file:./block.js",
