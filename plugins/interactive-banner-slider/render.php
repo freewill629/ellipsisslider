@@ -145,29 +145,31 @@ function ellipsis_interactive_banner_render_callback( $attributes, $content ) {
 
     $footnote = ! empty( $slide['footnote'] ) ? '<p class="ai-banner-slide__footnote">' . wp_kses_post( $slide['footnote'] ) . '</p>' : '';
 
+    $content_markup  = '<div class="ai-banner-slide__content">';
+    $content_markup .= '<h2 class="ai-banner-slide__title">' . wp_kses( $slide['title'], array( 'span' => array( 'class' => array() ) ) ) . '</h2>';
+    $content_markup .= '<p class="ai-banner-slide__description">' . wp_kses_post( $slide['description'] ) . '</p>';
+
+    if ( 'list' === $slide['layout'] ) {
+      $content_markup .= $bullets_markup . $cta;
+    } else {
+      $content_markup .= $cta . $bullets_markup;
+    }
+
+    $content_markup .= $footnote . '</div>';
+
     $slides_markup .= sprintf(
-      '<div class="ai-banner-slide layout-%5$s%6$s" data-index="%1$d">'
+      '<div class="ai-banner-slide layout-%2$s%3$s" data-index="%1$d">'
         . '<div class="ai-banner-slide__bg"><span class="ai-banner-slide__overlay"></span></div>'
         . '<div class="ai-banner-slide__inner">'
-          . '<div class="ai-banner-slide__content">'
-            . '<h2 class="ai-banner-slide__title">%2$s</h2>'
-            . '<p class="ai-banner-slide__description">%3$s</p>'
-            . '%7$s'
-            . '%8$s'
-            . '%9$s'
-          . '</div>'
           . '%4$s'
+          . '%5$s'
         . '</div>'
       . '</div>',
       absint( $index ),
-      wp_kses( $slide['title'], array( 'span' => array( 'class' => array() ) ) ),
-      wp_kses_post( $slide['description'] ),
-      $foreground,
       esc_attr( $slide['layout'] ? $slide['layout'] : 'hero' ),
       0 === $index ? ' is-active' : '',
-      $cta,
-      $bullets_markup,
-      $footnote
+      $content_markup,
+      $foreground
     );
 
     $dots_markup .= sprintf( '<button class="ai-banner-slider__dot%2$s" data-target="%1$d" aria-label="Slide %1$d"></button>', absint( $index ) + 1, 0 === $index ? ' is-active' : '' );
