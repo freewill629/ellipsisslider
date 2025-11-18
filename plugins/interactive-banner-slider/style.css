@@ -289,6 +289,10 @@
   align-self: flex-start;
 }
 
+.ai-banner-slide.layout-list .ai-banner-slide__cta {
+  margin-top: 1rem;
+}
+
 .ai-banner-slide.layout-cta .ai-banner-slide__inner {
   grid-template-columns: 1fr;
   text-align: center;
