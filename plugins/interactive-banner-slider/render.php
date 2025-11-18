@@ -150,8 +150,7 @@ function ellipsis_interactive_banner_render_callback( $attributes, $content ) {
     $content_markup .= '<p class="ai-banner-slide__description">' . wp_kses_post( $slide['description'] ) . '</p>';
 
     if ( 'list' === $slide['layout'] ) {
-      $content_markup .= $bullets_markup;
-      $content_markup .= $cta ? '<div class="ai-banner-slide__cta">' . $cta . '</div>' : '';
+      $content_markup .= $bullets_markup . $cta;
     } else {
       $content_markup .= $cta . $bullets_markup;
     }
